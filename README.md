@@ -1,1 +1,2 @@
-# ProgressBG-VC-Python
+# ProgressBG-Python
+ProgressBG Python Course

@@ -1,0 +1,24 @@
+{
+	"build_systems":
+	[
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"dictionary": "Packages/Language - Bulgarian/OldBulgarian.dic",
+		"show_definitions": false,
+		"spell_check": true,
+		"tab_size": 2,
+		"translate_tabs_to_spaces": false,
+		"trim_trailing_white_space_on_save": true,
+	},
+	"sublime-view-in-browser":
+	{
+	},
+	"virtualenv": "/data/projects/www/wwwcourses.github.io/ProgressBG-Python/.venv"
+}
