@@ -7,27 +7,27 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-Python/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-Python/outfit/css/themes/light.css" id="theme">
+	<link rel="stylesheet" href="/ProgressBG-VC-Python/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-VC-Python/outfit/css/themes/light.css" id="theme">
 	<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement( 'link' );
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-Python/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-Python/lib/reveal.js/css/print/paper.css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-VC-Python/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-VC-Python/lib/reveal.js/css/print/paper.css';
 		document.getElementsByTagName( 'head' )[0].appendChild( link );
 	</script>
 	<!--[if lt IE 9]>
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
 
-	<!-- CUSTOM -->	
+	<!-- CUSTOM -->
 	<base target="_blank">
 </head>
 <body>
 	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
 		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-Python/pages/agenda/agenda.html#variablesAndBasicIO" target="_top"><i class="fa fa-home"></i></a>
+			<a class="home_link" href="/ProgressBG-VC-Python/pages/agenda/agenda.html#variablesAndBasicIO" target="_top"><i class="fa fa-home"></i></a>
 			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
 			<div class="help_text">
 				<div><span>N/Спейс</span><span>следващ слайд</span></div>
@@ -37,9 +37,9 @@
 			</div>
 		</div>
 		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-Python/outfit/css/themes/projector.css'); return false;">Projector</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC-Python/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC-Python/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC-Python/outfit/css/themes/projector.css'); return false;">Projector</a>
 		</div>
 		<div class="slides">
 <!--
@@ -57,7 +57,7 @@
 		</div>
 		<div class="company">
 			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-Python/outfit/images/logos/ProgressBG_logo_529_127.png">
+			<img style="height:80%" src="/ProgressBG-VC-Python/outfit/images/logos/ProgressBG_logo_529_127.png">
 			</a>
 		</div>
 		<div class="author">
@@ -69,7 +69,7 @@
 		<div class="company">
 			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
 		</div>
-	</section>	
+	</section>
 </section>
 
 <section><h2>Basic IO - User input</h2>
@@ -77,7 +77,7 @@
 		<p>Allows to prompt the user to enter some value.</p>
 		<pre><code rel="Syntax" class="python">
 			variable = raw_input("prompt message, to be displayed to the user: ")
-		</code></pre>		
+		</code></pre>
 		<pre><code rel="Python2" class="python">
 			>>> user_input = raw_input("enter some value: ")
 			enter some value: iva
@@ -86,14 +86,14 @@
 			iva
 
 			>>> print type(user_input)
-			&lt;type 'str'&gt;			
-		</code></pre>		
-	</section>	
+			&lt;type 'str'&gt;
+		</code></pre>
+	</section>
 	<section><h3>the input() function - <span class="note">Python3 way</span></h3>
 		<p>Allows to prompt the user to enter some value.</p>
 		<pre><code rel="Syntax" class="python">
 			variable = raw_input("prompt message, to be displayed to the user: ")
-		</code></pre>		
+		</code></pre>
 		<pre><code rel="Python3" class="python">
 			>>> user_input = input("enter some value: ")
 			enter some value: 42
@@ -102,10 +102,10 @@
 			42
 
 			>>> print(type(user_input))
-			&lt;class 'str'&gt;			
+			&lt;class 'str'&gt;
 		</code></pre>
-		<p class="note">Note, that no matter what value the user entered, it will be stored as a string!</p>		
-	</section>	
+		<p class="note">Note, that no matter what value the user entered, it will be stored as a string!</p>
+	</section>
 	<section><h3>Examples (python3)</h3>
 		<pre><code rel="Python" class="python">
 			user_name = input("hi, what's your name: ")
@@ -126,14 +126,14 @@
 				# not possible in Python!!!
 				$name = "Iva";
 				print("Hello $name !")
-					Hello Iva !			
+					Hello Iva !
 			</code></pre>
 		</dl>
 	</section>
 </section>
 
 <section><h2>"old-style" String Formatting in Python</h3>
-	<section><h3>syntax</h3>	
+	<section><h3>syntax</h3>
 		<pre><code rel="Syntax" class="shell">
 			"format_string" % (values_tuple)
 		</code></pre>
@@ -141,7 +141,7 @@
 			>>> "%s died in %d year" % ("Ada Byron", 1852)
 			'Ada Byron died in 1852 year'
 		</code></pre>
-		<dl class="fa">			
+		<dl class="fa">
 			<dt><span class="note">format_string</span> -  a string with formatting placeholders in  it</dt>
 			<dt><span class="note">values_tuple</span> - the values which will be interpolated into the respective formatting placeholders.</dt>
 		</dl>
@@ -206,7 +206,7 @@
 	</section>
 	<section><h3>placeholders</h3>
 		<dl class="fa">
-			<dt>You can give in placeholders an explicit positional index (<span class="note">counting starts from 0</span>), which allows values to be printed in desired order</dt>			
+			<dt>You can give in placeholders an explicit positional index (<span class="note">counting starts from 0</span>), which allows values to be printed in desired order</dt>
 		</dl><br>
 		<pre><code rel="Python" class="python">
 				>>> "{1} died in {0} year".format("Ada Byron", 1852)
@@ -229,7 +229,7 @@
 		<dl class="fa">
 			<dt><a href="https://www.programiz.com/python-programming/methods/string/format">Python String format() @programiz.com</a></dt>
 			<dt class="advanced"><a href="https://docs.python.org/3.6/library/string.html#formatstrings">Format String Syntax @docs.python.org/3.6</a></dt>
-		</dl>		
+		</dl>
 	</section>
 	<section><h3>examples</h3>
 		<pre><code rel="Python" class="python">
@@ -245,11 +245,11 @@
 
 <!-- <section id="hw">
 	<section><h1>Задачи за упражнения</h1></section>
-	<section id="task1"><h3>%%Task1_Title%%</h3>		
-	</section>	
+	<section id="task1"><h3>%%Task1_Title%%</h3>
+	</section>
 </section> -->
 
-<section class="disclaimer" data-background="/ProgressBG-Python/outfit/images/for_slides/the_end_on_sand.jpg">
+<section class="disclaimer" data-background="/ProgressBG-VC-Python/outfit/images/for_slides/the_end_on_sand.jpg">
 	 <p>These slides are based on</p>
 	 <p>customised version of </p>
 	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
@@ -263,10 +263,10 @@
 		</div>
 	</div>
 	<!-- Custom processing -->
-	<script src="/ProgressBG-Python/outfit/js/slides.js"></script>
+	<script src="/ProgressBG-VC-Python/outfit/js/slides.js"></script>
 	<!-- external scripts -->
-	<script src="/ProgressBG-Python/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-Python/lib/reveal.js/js/reveal.js"></script>
+	<script src="/ProgressBG-VC-Python/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-VC-Python/lib/reveal.js/js/reveal.js"></script>
 	 <!-- init reveal -->
 	<script>
 		// Full list of configuration options available at:
@@ -294,12 +294,12 @@
 			// transition: Reveal.getQueryHash().transition || 'default'
 			// Optional reveal.js plugins
 			dependencies: [
-				{ src: '/ProgressBG-Python/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-Python/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-Python/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-Python/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-Python/lib/reveal.js/plugin/notes/notes.js', async: true }
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/notes/notes.js', async: true }
 			]
 		});
 	</script>

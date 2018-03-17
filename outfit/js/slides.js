@@ -1,6 +1,6 @@
 function themeSwitcher(themeName){
     alert("themeSwitcher ON");
-    document.getElementById('theme').setAttribute('href','/ProgressBG-Python/lib/reveal.js/css/theme/'+themeName+'.css');
+    document.getElementById('theme').setAttribute('href','/ProgressBG-VC-Python/lib/reveal.js/css/theme/'+themeName+'.css');
 }
 
 function  PrettyPreCodeTmp(){
