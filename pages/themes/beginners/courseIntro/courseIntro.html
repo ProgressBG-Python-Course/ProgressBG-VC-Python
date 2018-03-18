@@ -123,16 +123,15 @@
 	</section>
 </section>
 
-<section><h2>Course intro</h2>
-	<section><h3>Course Email</h3>
-		<dl class="fa">
-			<dt>progressbg.python.course@gmail.com</dt>
-			<dd>use it to submit your HW</dd>
-			<dd>ask any questions</dd>
+<section><h2>Course Email</h2>
+	<p style="font-size: 1.5em; font-style: normal;" class="note">progressbg.python.course@gmail.com</p>
+	<dl class="fa">
+			<dt>use it to submit your HW</dt>
+			<dt>ask any questions</dt>
 		</dl>
-	</section>
 </section>
 
+<section><h1>Python intro</h1></section>
 <section><h2>Python intro</h2>
 	<section><h3></h3>
 		<a href="images/Python_vs_Java-programming_lang_as_an_essay.jpg"><img src="images/Python_vs_Java-programming_lang_as_an_essay.jpg"></a>
@@ -152,7 +151,7 @@
 		<dl class="fa">
 			<dt>Python is a general-purpose programming language, used for:</dt>
 			<dd>System administration (incl. cloud)</dd>
-			<dd>Embedded devices</dd>
+			<dd>Embedded devices (incl. Raspberry Pi, Arduino, ...)</dd>
 			<dd>Web and Internet Development</dd>
 			<dd>Mobile apps development</dd>
 			<dd>Data Science, Big Data, Machine Learning</dd>
@@ -161,6 +160,7 @@
 		</dl>
 	</section>
 	<section><h3>Python implementations/distributions</h3>
+		<p>Python is an open source project: <a href="https://github.com/python">Python's github</a></p>
 		<dl class="fa">
 			<dt><a href="https://www.python.org/">CPython</a> - the official Python distribution.</dt>
 			<dt><a href="https://pypy.org/">PyPy</a> - faster and compliant with Python2 and Python 3</dt>
@@ -171,6 +171,7 @@
 	</section>
 </section>
 
+<section><h1>Setting up Python</h1></section>
 <section><h2>Setting up Python (on Windows, Mac, Linux)</h2>
 	<section><h3>Install Python on Windows - HowTo</h3>
 		<dl class="fa">
@@ -220,6 +221,7 @@
 	<section><h3></h3>
 		<dl class="fa">
 			<dt>Open your Python's <a href="https://en.wikipedia.org/wiki/IDLE">IDLE</a></dt>
+			<dd>It's bundled with Python installation, so it's already in your machine.</dd>
 			<dt>Write down next code (<span class="note">put your names in the quotes</span>) and hit <kbd>enter</kbd>:</dt>
 		</dl>
 		<pre><code rel="Python" class="python">
@@ -234,7 +236,7 @@
 	<section>
 		<dl class="fa">
 			<dt><a href="https://www.jetbrains.com/pycharm/">JetBrains' PyCharm</a></dt>
-			<dd>Download free <a href="https://www.jetbrains.com/pycharm/download"></a>community edition</dd>
+			<dd><a href="https://www.jetbrains.com/help/pycharm/quick-start-guide.html">Quick Start Guide</a></dd>
 			<dt><a href="https://www.sublimetext.com/">Sublime Text 3</a></dt>
 			<dd>More on using Sublime Text with Python: <a href="https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/">Setting Up Sublime Text 3 for Full Stack Python Development</a></dd>
 			<dt><a href="https://code.visualstudio.com/">Visual Studio Code</a></dt>
@@ -243,48 +245,8 @@
 	</section>
 </section>
 
+<section><h1>Write Python in VS Code</h1></section>
 <section><h2>Write Python in VS Code</h2>
-	<section><h3>Prepare your Workspace</h3>
-		<dl class="fa">
-			<dt>Make a root folder for your python project.</dt>
-			<dt>Open vscode.</dt>
-			<dt>Select "Add folder" and choose the folder you've made.</dt>
-			<dt>In the sidebar, the "Explorer" will show your folder.</dt>
-			<dt>Save your workspace (you can use the same name as the project)</dt>
-			<dd>Menu=>File=>save Workspace As...</dd>
-		</dl>
-	</section>
-	<section><h3>Prepare your Workspace</h3>
-		<p>Your Workspace should look like: </p>
-		<a href="images/vsCode/PrepareWorkspaceWhite.png"><img src="images/vsCode/PrepareWorkspaceWhite.png"></a>
-	</section>
-	<!-- <section><h3>Workspace settings</h3>
-		<dl class="fa">
-			<dt>Press <kbd>CTRL+SHIFT+P</kbd> and type <code>Workspace Settings</code></dt>
-			<dt>Here you can change the default settings, as you wish in order to customize your experience with your project.</dt>
-		</dl>
-	</section> -->
-	<section><h3>Create and execute a Python file</h3>
-		<dl class="fa">
-			<dt>Right click on the root folder in VS Code Sidebar.</dt>
-			<dt>Select: "New File", enter the name: <code>say_hello.py</code> and press enter.</dt>
-			<dt>Write down this code (<span class="note">put your name in the quotes</span>):</dt>
-			<pre><code rel="Python" class="python">
-				my_name = "Iva"
-				print("Hello " + my_name)
-			</code></pre>
-			<dt>Right click anywhere on the editor window and select "Run Python File in Terminal".<br><span class="note">Note, this command will be present, only if you've been installed the extension: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">python by microsoft</a></span></dt>
-		</dl>
-	</section>
-	<section><h3></h3>
-		<dl class="fa">
-			<dt>A terminal panel should be opened in your editor showing the python script execution and its output:</dt>
-			<a href="images/vsCode/CreateAndExecutePythohnFile.gif"><img src="images/vsCode/CreateAndExecutePythohnFile.gif"></a>
-		</dl>
-	</section>
-	<section><h3>Select Python version</h3>
-		<p><kbd>ctrl+shift+p</kbd> and find <code>Python: Select interpreter</code></p>
-	</section>
 	<section><h3>Useful Keyboard Shortcuts</h3>
 		<table>
 			<tr>
@@ -305,6 +267,48 @@
 			<tr><td><kbd>ctrl+l</kbd></td><td>While in terminal will clear the output</td></tr>
 		</table>
 		<p class="note">Command Palette gives you access to all VS commands in the given context.</p>
+	</section>
+	<section><h3>Prepare your Workspace</h3>
+		<dl class="fa">
+			<dt>Make a root folder for your python projects.</dt>
+			<dt>Open vscode.</dt>
+			<dt>Select "Add folder" and choose the folder you've made.</dt>
+			<dt>In the sidebar, the "Explorer" will show your folder.</dt>
+			<dt>Save your workspace (you can use the same name as the project)</dt>
+			<dd>Menu=>File=>save Workspace As...</dd>
+			<dd><kbd>CTRL+SHIFT+P</kbd>=>save Workspace As...</dd>
+		</dl>
+	</section>
+	<section><h3>Prepare your Workspace - demo</h3>
+		<p>Your Workspace should look like: </p>
+		<a href="images/vsCode/PrepareWorkspaceWhite.png"><img src="images/vsCode/PrepareWorkspaceWhite.png"></a>
+	</section>
+	<section><h3 class="advanced">Workspace settings</h3>
+		<dl class="fa">
+			<dt>Press <kbd>CTRL+SHIFT+P</kbd> and type <code>Workspace Settings</code></dt>
+			<dt>Here you can change the default settings, as you wish in order to customize your experience with your project.</dt>
+		</dl>
+	</section>
+	<section><h3>Create and execute a Python file</h3>
+		<dl class="fa">
+			<dt>Right click on the root folder in VS Code Sidebar.</dt>
+			<dt>Select: "New File", enter the name: <code>say_hello.py</code> and press enter.</dt>
+			<dt>Write down this code (<span class="note">put your name in the quotes</span>):</dt>
+			<pre><code rel="Python" class="python">
+				my_name = "Iva"
+				print("Hello " + my_name)
+			</code></pre>
+			<dt>Right click anywhere on the editor window and select "<strong>Run Python File in Terminal</strong>".<br><span class="note">Note, this command will be present, only if you've been installed the extension: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">python by microsoft</a></span></dt>
+		</dl>
+	</section>
+	<section><h3>Create and execute a Python file - demo</h3>
+		<dl class="fa">
+			<dt>A terminal panel should be opened in your editor showing the python script execution and its output:</dt>
+			<a href="images/vsCode/CreateAndExecutePythohnFile.gif"><img src="images/vsCode/CreateAndExecutePythohnFile.gif"></a>
+		</dl>
+	</section>
+	<section><h3>Select Python version</h3>
+		<p><kbd>ctrl+shift+p</kbd> and find <code>Python: Select interpreter</code></p>
 	</section>
 	<section><h3>Useful videos</h3>
 		<p><a href="https://www.youtube.com/watch?v=s30KQESSEYk">How to Install Python with Visual Studio Code [2018]</a> by <a href="https://www.youtube.com/channel/UCk8Kq6bH0fcmk9_wmlP50lg">Jason E.</a></p>
