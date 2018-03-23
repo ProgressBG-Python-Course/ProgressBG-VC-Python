@@ -180,7 +180,7 @@
 		<dl class="fa">
 			<dt>With Comparison Operations we can check if 2 or more values are equal or if a value is less than other, and so on.</dt>
 			<dt>The result of a Comparison Operation is True/False</dt>
-			<dt class="note">Comparing objects of different types, except different numeric, will raise a TypeError! Python do not want to compare "apples" with "oranges", as other languages do.</dt>
+			<dt class="note">Comparing objects of different types, except different numeric, will raise a TypeError in Python3! (Can not compare "apples" with "oranges")</dt>
 		</dl><br><br>
 		<pre><code rel="Python" class="python">
 			>>> 2 < 1
@@ -188,6 +188,54 @@
 			>>> 2 < "1"
 			...
 			TypeError: '<' not supported between instances of 'int' and 'str
+		</code></pre>
+	</section>
+	<section><h3 class="advanced">Notes on comparison - Python 2</h3>
+		<dl class="fa" style="font-size: .8em">
+			<dt><a href="https://docs.python.org/2.7/reference/expressions.html#value-comparisons">docs.python.org/2/ - Value comparisons</a>:</dt>
+			<dd><q>"The operators <, >, ==, >=, <=, and != compare the values of two objects. The objects do not need to have the same type."</q></dd>
+			<dd><q>"The value of an object is a rather abstract notion in Python"</q></dd>
+			<dd><q>"The default behavior for equality comparison (== and !=) is based on the identity of the objects"</q></dd>
+			<dd><q>"The default order comparison (<, >, <=, and >=) gives a consistent but arbitrary order."</q></dd>
+		</dl>
+	</section>
+	<section><h3 class="advanced">Notes on comparison - Python 2 - examples</h3>
+		<pre><code rel="Python" class="python">
+			>>> "2" == 2
+			# False
+
+			>>> "2" >= 2
+			True
+
+			>>> 2 >= "2"
+			False
+
+			>>> 99999 >= "2"
+			False
+		</code></pre>
+	</section>
+	<section><h3 class="advanced">Notes on comparison - Python 3</h3>
+		<dl class="fa" style="font-size: .8em">
+			<dt><a href="https://docs.python.org/3/reference/expressions.html#value-comparisons">docs.python.org/2/ - Value comparisons</a>:</dt>
+			<dd>"The default behavior for equality comparison (== and !=) is based on the identity of the objects. Hence, equality comparison of instances with the same identity results in equality, and equality comparison of instances with different identities results in inequality"</dd>
+			<dd>"A default order comparison (<, >, <=, and >=) is not provided; an attempt raises TypeError."</dd>
+		</dl>
+	</section>
+	<section><h3 class="advanced">Notes on comparison - best practices</h3>
+		<p class="note">When you need a reliable comparison, make sure that you compare values from same type!</p>
+		<p>If you need, you can convert between built-in types by using some of the <a href="https://docs.python.org/3/library/functions.html">Python's Built-in Functions</a> (some of them will be discussed in further themes).</p>
+		<p>For objects comparison you can implement <em>rich comparison methods</em> (will be discussed in OOP themes)</p>
+	</section>
+	<section><h3 class="advanced">Notes on comparison - best practices - examples</h3>
+		<pre><code rel="Python" class="python">
+			print("2" == str(2))
+			# True
+
+			print(int("2") >= 2)
+			# True
+
+			print(99999 >= int("2"))
+			# True
 		</code></pre>
 	</section>
 	<section><h3>the operators</h3>
@@ -252,7 +300,8 @@
 	</section>
 	<section><h3>So, why  "9" < "1000" returns False?</h3>
 			<p>If we use the <a href="https://ascii.cl/">ASCII Codes Table</a>, we see that the ASCII code point for "9" is 57, and for "1" - 49.</p>
-			<p>So, Python compares <code>57 < 49</code></p>
+			<p>So, Python compares <code>57 < 49</code> and as the result is False it returns False for the whole expression</p>
+			<p class="advanced">You can get the Unicode code point for a one-character string using the built-in <code><a href="https://docs.python.org/3/library/functions.html?highlight=ord#ord">ord()</a></code> function</p>
 	</section>
 </section>
 
