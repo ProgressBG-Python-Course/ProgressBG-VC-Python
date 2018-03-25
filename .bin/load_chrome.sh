@@ -5,4 +5,4 @@
 # Profile 5 = iva
 # Profile 6 = JS_Advanced
 # Profile 7 = Python Course
-google-chrome  --profile-directory="Profile 7" https://mail.google.com https://progressbg-python-course.github.io/ProgressBG-VC-Python/ &
+nohup google-chrome  --profile-directory="Profile 7" https://mail.google.com https://progressbg-python-course.github.io/ProgressBG-VC-Python/ &
