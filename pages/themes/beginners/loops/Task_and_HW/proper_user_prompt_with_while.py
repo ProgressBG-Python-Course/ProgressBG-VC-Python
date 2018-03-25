@@ -1,8 +1,13 @@
-while True:
-    user_name = input("Enter your user name (at least 3 symbols): ")
-    if len(user_name) >= 3:
-        break
-    else:
-        print("*** At least 3 symbols, please! Try again.\n")
+password = "abracadabra"
+user_pass = input("Enter your password:")
+tries = 0
+
+while tries < 3:
+  if user_pass == password:
+    break
+  else:
+    user_pass = input("Enter your password:")
+
+  tries += 1
 
 print("Nice, your user_name is: ", user_name)

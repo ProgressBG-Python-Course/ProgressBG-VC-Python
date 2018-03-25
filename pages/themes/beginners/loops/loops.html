@@ -133,6 +133,7 @@
 		</code></pre>
 	</section>
 	<section><h3>Example - proper use case of while</h3>
+		<p class="note"><code>While</code> loop is suitable, when we do not know in advance the number of iterations needed</p>
 		<pre><code rel="Python" class="python">
 			# ask user to enter a name (string), until it contains at least 3 symbols
 			# the len function on string returns the number of symbols in a string
@@ -178,7 +179,7 @@
 				#do something with item
 		</code></pre>
 		<dl class="fa">
-			<dt>Python <code>for</code> statement is different than the "C-based" <code>for</code> in other popular languages (C#, Java, PHP, JavaScript)</dt>
+			<dt>Python <code>for</code> statement is different than the "C-based" <code>for</code> loops in other popular languages (C#, Java, PHP, JavaScript)</dt>
 			<dt class="note">In Python, <code>for</code> statement iterates over the items of any sequence.</dt>
 			<dd>This is common to <code>foreach</code> loop concept in above-mentioned languages </dd>
 		</dl>
@@ -259,6 +260,10 @@
 			l
 		</code></pre>
 	</section>
+	<section><h3><code>do-while</code> emulations</h3>
+		<p class="note">Python did not have <code>do-while</code> loop, as in other languages. But it can be easily emulated.</p>
+		<p>Reason: <a href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a></p>
+	</section>
 	<section><h3>Example - <code>do-while</code> emulation with <code>break</code></h3>
 		<pre><code rel="Python" class="python">
 			# ask user to enter a name (string), until it contains at least 3 symbols
@@ -271,17 +276,21 @@
 			print("Thank you, {}!".format(user_name))
 		</code></pre>
 	</section>
-	<section><h3>Example - <code>do-while</code> emulation <b>without</b> <code>break</code></h3>
+	<section><h3>Example - <code>do-while</code> emulation without <code>break</code></h3>
 		<pre><code rel="Python" class="python">
-			user_number = int(input("Enter a positive number: "))
-			while user_number <= 0:
-			  user_number = int(input("Enter a positive number: "))
+			# ask user to enter a name (string), until it contains at least 3 symbols
+			user_name = input("Enter a name, please: ")
+			user_name_length = len(user_name)
 
-			print("Nice, your number is: ", user_number)
+			while user_name_length < 3:
+				user_name = input("Enter a name (at least 3 symbols): ")
+				user_name_length = len(user_name)
+
+			print("Thank you, {}!".format(user_name))
 		</code></pre>
 		<p class="note">Can you imagine how the code would look like, if the "do" block was more than 1 line long?</p>
 	</section>
-	<section><h3>Task: prompt user to enter at least 3 symbols long user name</h3>
+	<!-- <section><h3>Task: prompt user to enter at least 3 symbols long user name</h3>
 		<dl class="fa">
 			<dt>Implement a program, which will asks the user for a user name with at least 3 symbols in it.</dt>
 			<dt>Bellow is the desired output</dt>
@@ -296,7 +305,7 @@
 			Enter your user name (at least 3 symbols): iva
 			Nice, your user_name is:  iva
 		</code></pre>
-	</section>
+	</section> -->
 </section>
 
 <section><h1><code>continue</code> statement</h1></section>
