@@ -80,7 +80,8 @@
 	</section>
 </section>
 
-<section><h2>Sequence Data Types</h2>
+<section><h1>Sequence Data Types - Overview</h1></section>
+<section><h2>Sequence Data Types - Overview</h2>
 	<section><h3>What is a Sequence?</h3>
 		<p>A sequence in Python is a container, storing <span class="note">ordered collection</span>  of objects.</p>
 		<a href="images/animalSequence.png"><img src="images/animalSequence.png"></a>
@@ -123,6 +124,8 @@
 	</section>
 </section>
 
+
+<section><h1>Lists</h1></section>
 <section><h2>Lists</h2>
 	<section><h3>What is a List?</h3>
 		<dl class="fa">
@@ -197,6 +200,7 @@
 	</section>
 </section>
 
+<section><h1>Tuples</h1></section>
 <section><h2>Tuples</h2>
 	<section><h3>What is a Tuple?</h3>
 		<dl class="fa">
@@ -270,6 +274,7 @@
 	</section>
 </section>
 
+<section><h1>Lists vs Tuples</h1></section>
 <section><h2>Lists vs Tuples</h2>
 	<section><h3></h3>
 		<dl class="fa">
@@ -282,6 +287,7 @@
 	</section>
 </section>
 
+<section><h1>Range Object</h1></section>
 <section><h2>Range Object</h2>
 	<section><h3>What is a Range Object?</h3>
 		<dl class="fa">
@@ -365,6 +371,7 @@
 </section>
 
 
+<section><h1>Common Sequence Operations</h1></section>
 <section id="commonSequenceOperations"><h2>Common Sequence Operations</h2>
 	<section>
 		<p>Next operation can be used on all sequence types, with the exception that <span class="note">range() objects can not be concatenated or repeated</span> (but the sequences they produced can).</p>
@@ -593,6 +600,7 @@
 	</section>
 </section>
 
+<section><h1>Loop on sequence</h1></section>
 <section><h2>Loop on sequence</h2>
 	<section><h3>Syntax</h3>
 		<pre><code rel="Terminal" class="shell" data-noescape>
@@ -619,6 +627,7 @@
 	</section>
 </section>
 
+<section><h1>More on lists</h1></section>
 <section><h2>More on lists</h2>
 	<section><h3>Create list from sequence: <code class="note">list()</code></h3>
 		<dl class="fa">
@@ -747,6 +756,7 @@
 	</section>
 </section>
 
+<section><h1>More on tuples</h1></section>
 <section><h2>More on tuples</h2>
 	<section><h3>Create tuple from sequence: <code class="note">tuple()</code></h3>
 		<dl class="fa">
@@ -780,8 +790,27 @@
 			<dt>But, we can change the items <span class="note">inside</span> a list!</dt>
 		</dl>
 	</section>
+	<section><h3 class="advanced">Change mutable item inside tuple? <strong> - example</strong></h3>
+		<pre><code rel="Python" class="python">
+			users = (
+			    ["Ivan", "Ivanov", 34],
+			    ["Maria", "Ivanova", 36],
+			    ["Asen", "Asenov", 20],
+			)
+
+			### try to change items inside a mutable tuple item:
+			users[0][2] = 100
+			print(users[0])
+			# ['Ivan', 'Ivanov', 100]
+
+			### try to change a tupple item:
+			users[0] = ["Petyr", "Petrov", 45]
+			# TypeError: 'tuple' object does not support item assignment
+		</code></pre>
+	</section>
 </section>
 
+<section><h1>Resources</h1></section>
 <section><h2>Resources</h2>
 	<dl class="fa">
 		<dt><a href="https://www.programiz.com/python-programming/methods/tuple">Python Tuple Methods @programiz.com</a></dt>
@@ -791,6 +820,7 @@
 	</dl>
 </section>
 
+<section><h1>Exercises</h1></section>
 <section><h2>Exercises</h2>
 	<section><h3>Task 1</h3>
 		<dl class="fa">
@@ -838,7 +868,8 @@
 	</section>
 	<section><h3>Task 5</h3>
 		<dl class="fa">
-			<dt>Write a program which will ask the user to enter N names. N is also entered by the user, after respective prompt</dt>
+			<dt>Write a program which will ask the user to enter N names. N is also entered by the user, after respective prompt.</dt>
+			<dt>The names entered by the user, should be stored in a list <code>names</code> and will be printed to output.</dt>
 			<dt>Here is how your program should behave:</dt>
 		</dl>
 		<pre><code rel="Terminal" class="shell" data-noescape>
@@ -858,16 +889,16 @@
 		<pre><code rel="Python" class="python">
 			distances_from_sofia = [
 			    ("Bansko", 97),
-			    ("Belgium - Brussels", 1701),
-			    ("Egypt - Alexandria", 1403),
-			    ("France - Nice", 1307),
-			    ("Hungary - Szeged", 469),
-			    ("Ireland - Dublin", 2479),
-			    ("Italy - Palermo", 987),
-			    ("Russia - Moscow", 1779),
-			    ("Norway - Oslo", 2098),
-			    ("United Kingdom - London", 2019),
-			    ("Spain - Madrid", 2259),
+			    ("Brussels", 1701),
+			    ("Alexandria", 1403),
+			    ("Nice", 1307),
+			    ("Szeged", 469),
+			    ("Dublin", 2479),
+			    ("Palermo", 987),
+			    ("Moscow", 1779),
+			    ("Oslo", 2098),
+			    ("London", 2019),
+			    ("Madrid", 2259),
 			]
 		</code></pre>
 	</section>
@@ -876,9 +907,20 @@
 		<pre><code rel="Output" class="text" data-noescape>
 			Distances bellow 1500km from Sofia are:
 			Bansko - 97
-			Egypt - Alexandria - 1403
-			France - Nice - 1307
-			Hungary - Szeged - 469Italy - Palermo - 987
+			Alexandria - 1403
+			Nice - 1307
+			Szeged - 469
+			Palermo - 987
+		</code></pre>
+	</section>
+	<section><h3 class="advanced">Task 6 - advanced</h3>
+		<p>Using the <code>sorted()</code> function explained in <a href="https://docs.python.org/3/howto/sorting.html">Sorting HOW TO</a>, output the sorted lists of filtered distances in ascending order:</p>
+		<pre><code rel="Output" class="python">
+			Bansko - 97
+			Szeged - 469
+			Palermo - 987
+			Nice - 1307
+			Alexandria - 1403
 		</code></pre>
 	</section>
 </section>

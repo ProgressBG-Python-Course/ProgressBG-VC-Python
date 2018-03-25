@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 distances_from_sofia = [
     ("Bansko", 97),
     ("Brussels", 1701),
@@ -18,5 +20,5 @@ for t in distances_from_sofia:
         selected_distances.append(t)
 
 print("Distances bellow 1500 km from Sofia are:")
-for t in selected_distances:
+for t in sorted(selected_distances, key=itemgetter(1)):
     print("{} - {}".format(t[0], t[1]))
