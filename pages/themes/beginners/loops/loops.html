@@ -80,6 +80,7 @@
 	</section>
 </section>
 
+<section><h1>What are <span class="note">loops (cycles)</span></h1></section>
 <section><h2>What are <span class="note">loops (cycles)</span></h2>
 	<section>
 		<dl class="fa">
@@ -90,6 +91,7 @@
 	</section>
 </section>
 
+<section><h1><code>while</code> loop</h1></section>
 <section><h2><code>while</code> loop</h2>
 	<section><h3>Syntax</h3>
 		<pre><code rel="Syntax" class="python" data-noescape>
@@ -118,6 +120,7 @@
 			4
 			5
 		</code></pre>
+		<p class="note">This is just a simple example. For fixed numbers of times loops, it is better to user <code>for</code> with <code>range</code> loop, which will be discussed next</p>
 	</section>
 	<section><h3>Example: endless loop (find the problem)</h3>
 		<p class="note">If you run next code, your Python will run an endless loop. Use <kbd>CTRL+C</kbd> or <kbd>CTRL+Z</kbd> to stop it</p>
@@ -127,6 +130,21 @@
 			while i>=1 :
 				print(i)
 				i = 1
+		</code></pre>
+	</section>
+	<section><h3>Example - proper use case of while</h3>
+		<p class="note"><code>While</code> loop is suitable, when we do not know in advance the number of iterations needed</p>
+		<pre><code rel="Python" class="python">
+			# ask user to enter a name (string), until it contains at least 3 symbols
+			# the len function on string returns the number of symbols in a string
+			user_name = input("Enter a name, please: ")
+			user_name_length = len(user_name)
+
+			while user_name_length < 3:
+				user_name = input("Enter a name (at least 3 symbols): ")
+				user_name_length = len(user_name)
+
+			print("Thank you, {}!".format(user_name))
 		</code></pre>
 	</section>
 	<section><h3>Example: sum all numbers in [1..100]</h3>
@@ -141,6 +159,7 @@
 		<pre><code rel="Output" class="shell">
 			sum =  5050
 		</code></pre>
+		<p>Same task is better to be implemented with <code>for</code> loop!</p>
 	</section>
 	<section><h3>Task: sum even numbers in [1..100]</h3>
 		<dl class="fa">
@@ -152,6 +171,7 @@
 	</section>
 </section>
 
+<section><h1><code>for</code> loop</h1></section>
 <section><h2><code>for</code> loop</h2>
 	<section><h3>Syntax</h3>
 		<pre><code rel="Syntax" class="python" data-noescape>
@@ -159,8 +179,8 @@
 				#do something with item
 		</code></pre>
 		<dl class="fa">
-			<dt>Python <code>for</code> statement is different than the "C-based" <code>for</code> in other popular languages (C#, Java, PHP, JavaScript)</dt>
-			<dt>In Python, <code>for</code> statement iterates over the items of any sequence.</dt>
+			<dt>Python <code>for</code> statement is different than the "C-based" <code>for</code> loops in other popular languages (C#, Java, PHP, JavaScript)</dt>
+			<dt class="note">In Python, <code>for</code> statement iterates over the items of any sequence.</dt>
 			<dd>This is common to <code>foreach</code> loop concept in above-mentioned languages </dd>
 		</dl>
 	</section>
@@ -205,6 +225,7 @@
 	</section>
 </section>
 
+<section><h1><code>break</code> statement</h1></section>
 <section><h2><code>break</code> statement</h2>
 	<section><h3>Syntax in while loop</h3>
 		<pre><code rel="Syntax" class="python" data-noescape>
@@ -239,27 +260,37 @@
 			l
 		</code></pre>
 	</section>
+	<section><h3><code>do-while</code> emulations</h3>
+		<p class="note">Python did not have <code>do-while</code> loop, as in other languages. But it can be easily emulated.</p>
+		<p>Reason: <a href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a></p>
+	</section>
 	<section><h3>Example - <code>do-while</code> emulation with <code>break</code></h3>
 		<pre><code rel="Python" class="python">
+			# ask user to enter a name (string), until it contains at least 3 symbols
 			while True:
-			  user_number = int(input("Enter a positive number: "))
-			  if user_number > 0:
-			    break
+				user_name = input("Enter a name (at least 3 symbols): ")
+				user_name_length = len(user_name)
+				if user_name_length > 3:
+					break
 
-			print("Nice, your number is: ", user_number
+			print("Thank you, {}!".format(user_name))
 		</code></pre>
 	</section>
-	<section><h3>Example - <code>do-while</code> emulation <b>without</b> <code>break</code></h3>
+	<section><h3>Example - <code>do-while</code> emulation without <code>break</code></h3>
 		<pre><code rel="Python" class="python">
-			user_number = int(input("Enter a positive number: "))
-			while user_number <= 0:
-			  user_number = int(input("Enter a positive number: "))
+			# ask user to enter a name (string), until it contains at least 3 symbols
+			user_name = input("Enter a name, please: ")
+			user_name_length = len(user_name)
 
-			print("Nice, your number is: ", user_number)
+			while user_name_length < 3:
+				user_name = input("Enter a name (at least 3 symbols): ")
+				user_name_length = len(user_name)
+
+			print("Thank you, {}!".format(user_name))
 		</code></pre>
 		<p class="note">Can you imagine how the code would look like, if the "do" block was more than 1 line long?</p>
 	</section>
-	<section><h3>Task: prompt user to enter at least 3 symbols long user name</h3>
+	<!-- <section><h3>Task: prompt user to enter at least 3 symbols long user name</h3>
 		<dl class="fa">
 			<dt>Implement a program, which will asks the user for a user name with at least 3 symbols in it.</dt>
 			<dt>Bellow is the desired output</dt>
@@ -274,9 +305,10 @@
 			Enter your user name (at least 3 symbols): iva
 			Nice, your user_name is:  iva
 		</code></pre>
-	</section>
+	</section> -->
 </section>
 
+<section><h1><code>continue</code> statement</h1></section>
 <section><h2><code>continue</code> statement</h2>
 	<section>
 		<dl class="fa">
@@ -327,7 +359,7 @@
 	</section>
 </section>
 
-
+<section><h1>Exercises</h1></section>
 <section><h2>HW</h2>
 	<section><h3>"Guess the number" - full version</h3>
 		<dl class="fa">
@@ -335,6 +367,14 @@
 			<dt>The user now will have 5 tries to guess.</dt>
 			<dt>If he/she could not manage to guess the number for 5 tries, the game stops, with a message:<br>"You lost! My number was X"</dt>
 			<dd>where X is the machine number</dd>
+		</dl>
+	</section>
+	<section><h3>"Guess the number" - solutions</h3>
+		<dl class="fa">
+			<dt>a solution with while loop</dt>
+			<dd><a href="Task_and_HW/guess_the_number_while_loop.py">guess_the_number_while_loop.py</a></dd>
+			<dt>a solution with for loop</dt>
+			<dd><a href="Task_and_HW/guess_the_number_for_loop.py">guess_the_number_for_loop.py</a></dd>
 		</dl>
 	</section>
 </section>

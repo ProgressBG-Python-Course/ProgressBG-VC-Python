@@ -80,12 +80,12 @@
 	</section>
 </section>
 
+<section><h1>Dictionaries</h1></section>
 <section><h2>Dictionaries</h2>
 	<section><h3>What is a Dictionary?</h3>
 		<dl class="fa">
 			<dt>An <span class="note">unordered</span> collection of objects (values)</dt>
 			<dt>Each value is associated with a <span class="note">unique key</span>.</dt>
-			<dt>Dictionary values can be retrieved from the collection using their respective keys.</dt>
 			<dt>A dictionary can be regarded as a collection of <span class="note">key:value</span> pairs</dt>
 			<dt>Dictionaries in Python are similar to <em>associative arrays</em>, <em>hashes (hash tables)</em> in other programming languages (PHP, Perl, Ruby)</dt>
 		</dl>
@@ -102,11 +102,12 @@
 			}
 		</code></pre>
 		<dl class="fa">
-			<dt>There is <span class="note">no order</span> in dictionary, and is not guaranteed that the first declared pair will be first in the dictionary.</dt>
+			<dt>There is <span class="note">no order</span> in dictionary! We can not say if 'key1' pair will be before 'key2' pair</dt>
 			<dt>Keys must be <span class="note">immutable</span> data type. Usually they are strings.</dt>
 		</dl>
 	</section>
 	<section><h3>Retrieve item from dictionary</h3>
+		<p>Dictionary values can be retrieved from the collection using their respective keys.</p>
 		<pre><code rel="Syntax" class="shell" data-noescape>
 				item = dictionary_name[<em>key</em>]
 		</code></pre>
@@ -137,7 +138,53 @@
 			# {'apples': 2.2, 'oranges': 2.43, 'bananas': 3.5}
 		</code></pre>
 	</section>
-	<section><h3>Delete item from dictionary</h3>
+	<section><h3>Add item in a dictionary</h3>
+		<pre><code rel="Syntax" class="python" data-noescape>
+			dictionary_name[<em>new_key</em>] = <em>new_value</em>
+		</code></pre>
+		<pre><code rel="Python" class="python">
+			prices = {
+			    "apples": 2.50,
+			    "oranges": 2.43,
+			    "bananas": 3.50
+			}
+
+			### add new key:value pair:
+			prices['plums'] = 4.30
+			print(prices)
+			# {'apples': 2.5, 'oranges': 2.43, 'bananas': 3.5, 'plums': 4.3}
+		</code></pre>
+	</section>
+		<section><h3>Delete item from dictionary: <span class="note"><code>del</code></span> - operator</h3>
+		<pre><code rel="Syntax" class="python" data-noescape>
+			del <em>dictionary</em>[<em>key</em>]
+		</code></pre>
+		<dl class="fa">
+			<dt>Deletes the key:value pair whit the given key</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			prices = {
+				"apples": 2.50,
+				"oranges": 2.43,
+				"bananas": 3.50
+			}
+
+			### just delete 'oranges' key:value pair:
+			del prices['oranges']
+			print(prices)
+			# {'apples': 2.5, 'bananas': 3.5}
+		</code></pre>
+	</section>
+	<section><h3>Delete item from dictionary: <span class="note"><code>pop()</code></span></h3>
+		<pre><code rel="Syntax" class="python" data-noescape>
+			pop(<em>key</em>[, <em>default</em>])
+		</code></pre>
+		<dl class="fa">
+			<dt>If <em>key</em> is in the dictionary, remove it and return its value, else return <em>default</em>.</dt>
+			<dt>If no <em>key</em> or <em>default</em> values are given a KeyError is raised.</dt>
+		</dl>
+	</section>
+	<section><h3>Delete item from dictionary: <span class="note"><code>pop()</code></span> - example</h3>
 		<pre><code rel="Python" class="python">
 			prices = {
 			  "apples": 2.50,
@@ -150,24 +197,25 @@
 			print(apples_price, prices)
 			# 2.5 {'oranges': 2.43, 'bananas': 3.5}
 
-			### just delete 'oranges' key:value pair:
-			del prices['oranges']
-			print(prices)
-			# {'bananas': 3.5}
+			apples_price = prices.pop('apples', 5.00)
+			print(apples_price)
+			# 5.0
 		</code></pre>
 	</section>
-	<section><h3>Get all dictionary keys</h3>
-		prices = {
-		    "apples": 2.50,
-		    "oranges": 2.43,
-		    "bananas": 3.50
-		}
+	<section><h3>Get all dictionary keys: <span class="note"><code>keys()</code></span></h3>
+		<pre><code rel="Python" class="python">
+			prices = {
+			    "apples": 2.50,
+			    "oranges": 2.43,
+			    "bananas": 3.50
+			}
 
-		fruits = prices.keys()
-		print(fruits)
-		# dict_keys(['apples', 'oranges', 'bananas'])
+			fruits = prices.keys()
+			print(fruits)
+			# dict_keys(['apples', 'oranges', 'bananas'])
+		</code></pre>
 	</section>
-	<section><h3>get all dictionary values</h3>
+	<section><h3>Get all dictionary values: <code><span class="note">values()</span></code></h3>
 		<pre><code rel="Python" class="python">
 			prices = {
 			    "apples": 2.50,
@@ -220,14 +268,187 @@
 			# bananas - 3.5
 		</code></pre>
 	</section>
+	<section><h3>More on dictionaries</h3>
+		<p><a href="https://docs.python.org/3.3/library/stdtypes.html#dict"><code>dict</code> class in docs.python.org</a></p>
+	</section>
 </section>
 
-<!-- <section><h2>Sets</h2>
-	<section><h3>What is a Set?</h3></section>
-	<section><h3>Syntax</h3></section>
-	<section><h3>Example</h3></section>
-</section> -->
+<section><h1>Sets</h1></section>
+<section><h2>Sets</h2>
+	<section><h3>What is a Set?</h3>
+		<dl class="fa">
+			<dt>An <span class="note">unordered</span> collection of <span class="note">unique and immutable</span> objects.</dt>
+			<dt>Set data type in Python is an implementation of the sets as they are defined in mathematics.</dt>
+		</dl>
+	</section>
+	<section><h3>Sets vs Dictionaries</h3>
+		<dl class="fa">
+			<dt>Similarities:</dt>
+			<dd>Both are <span class="note">unordered</span> collection of objects (values).</dd>
+			<dd>Both are <span class="note">mutable</span> (add/remove/modify elements)</dd>
+			<dd>Both use <span class="note">curly braces</span> for their literals.</dd>
+			<dt>Differences:</dt>
+			<dd>A Set can not contain <span class="note">duplicate items</span>! Dictionaries can.</dd>
+			<dd>A dictionary is a <span class="note">collection of <code>key:value</code> pairs</span>.</dd>
+			<dd>Set is just a <span class="note">values collection</span></dd>
+		</dl>
+	</section>
+	<section><h3>Syntax</h3>
+		<pre><code rel="Syntax" class="shell" data-noescape>
+			set = {<em>value1</em>, <em>value2</em>, <em>valueN</em>}
+		</code></pre>
+		<dl class="fa">
+			<dt>There is <span class="note">no order</span> in a set! We can not say if 'value1' pair will be before 'value2'.</dt>
+			<dt><span class="note">No duplicate items</span> are allowed. If we define a set with duplicate items, only one of them will be present in the set. Others are ignored.</dt>
+		</dl>
+	</section>
+	<section><h3>Simple set - example</h3>
+		<pre><code rel="Python" class="python">
+			int_numbers = {1, 2, 3, 4, 5}
+			print(int_numbers)
+			print(type(int_numbers))
 
+			# {1, 2, 3, 4, 5}
+			# &lt;class 'set'&gt;
+		</code></pre>
+	</section>
+	<section><h3>Ignoring duplicate items - example 1</h3>
+		<pre><code rel="Python" class="python">
+			int_dup_numbers = {1, 2, 3, 1, 2, 4, 3, 5, 1, 2, 3}
+			print(int_dup_numbers)
+
+			# {1, 2, 3, 4, 5, 6}
+		</code></pre>
+	</section>
+	<section><h3>Ignoring duplicate items - example 2</h3>
+		<pre><code rel="Python" class="python">
+			int_numbers = {1, 2, 3, 4, 5}
+			int_dup_numbers = {1, 2, 3, 1, 2, 4, 3, 5, 1, 2, 3}
+
+			print(int_numbers == int_dup_numbers)
+
+			# True
+		</code></pre>
+	</section>
+</section>
+
+<section><h1>Basic sets operations</h1></section>
+<section><h2>Basic sets operations</h2>
+	<section><h3>Sets Union</h3>
+		<a href="images/Union_of_sets_A_and_B.svg.png"><img src="images/Union_of_sets_A_and_B.svg.png" style="height: 60vh;"></a>
+		<p>Returns new set, which elements are in either sets.</p>
+	</section>
+	<section><h3>Sets Union - example</h3>
+		<p>Pipe operator <code>|</code> or method <code>union</code> can be used</p>
+		<pre><code rel="Python" class="python">
+			set1 = {1, 2, 3, 4}
+			set2 = {5, 4}
+
+			union1 = set1 | set2
+			union2 = set1.union(set2)
+			print(union1)
+			print(union2)
+
+			# {1, 2, 3, 4, 5}
+			# {1, 2, 3, 4, 5}
+		</code></pre>
+	</section>
+
+	<section><h3>Sets Intersection</h3>
+		<a href="images/Intersection_of_sets_A_and_B.svg.png"><img src="images/Intersection_of_sets_A_and_B.svg.png" style="height: 60vh;"></a>
+		<p>Returns new set, which elements belong to both sets.</p>
+	</section>
+	<section><h3>Sets Intersection - example</h3>
+		<p>Ampersand operator <code>&</code> or method <code>intersection</code> can be used</p>
+		<pre><code rel="Python" class="python">
+			set1 = {1, 2, 3, 4}
+			set2 = {5, 4}
+
+			intersec1 = set1 & set2
+			intersec2 = set1.intersection(set2)
+			print(intersec1)
+			print(intersec2)
+
+			# {4}
+			# {4}
+		</code></pre>
+	</section>
+
+	<section><h3>Sets Difference</h3>
+		<a href="images/Set_difference.svg"><img src="images/Set_difference.svg" style="height: 60vh;"></a>
+		<p>C = A - B, where C is a new set, which elements are the elements of A, which are not present in B</p>
+	</section>
+	<section><h3>Sets Difference - example</h3>
+		<p>Operator <code>-</code> or method <code>difference</code> can be used</p>
+		<pre><code rel="Python" class="python">
+			set1 = {1, 2, 3, 4, 5}
+			set2 = {5, 4}
+
+			dif1 = set1.difference(set2)
+			dif2 = set1 - set2
+			print(dif1)
+			print(dif2)
+
+			# {1, 2, 3}
+			# {1, 2, 3}
+		</code></pre>
+	</section>
+
+	<section><h3>Sets Symmetric Difference</h3>
+		<a href="images/A_symmetric_minus_B.svg.png"><img src="images/A_symmetric_minus_B.svg.png" style="height: 60vh;"></a>
+		<p>C = A △ B, where C is a new set, which elements are either in sets A or B but not in both.</p>
+	</section>
+	<section><h3>Sets Symmetric Difference - example</h3>
+		<p>Pipe operator <code>|</code> or method <code>union</code> can be used</p>
+		<pre><code rel="Python" class="python">
+			set1 = {1, 2, 3, 4}
+			set2 = {5, 4}
+
+			sym_dif = set1.symmetric_difference(set2)
+			print(sym_dif)
+
+			# {1, 2, 3, 5}
+		</code></pre>
+	</section>
+	<section><h3>More on sets</h3>
+		<p><a href="https://docs.python.org/3/library/stdtypes.html#set"><code>set</code> class in docs.python.org</a></p>
+	</section>
+</section>
+
+<section><h1>Exercises</h1></section>
+<section><h2>Task1</h2>
+	<section>
+		<dl class="fa">
+			<dt>Represent the information given in next table in appropriate data structure, named <code>student_scores</code>.</dt>
+		</dl>
+		<a href="images/task1_student_with_high_score.png"><img src="images/task1_student_with_high_score.png" style="height: 50vh"></a>
+	</section>
+	<section>
+		<dl class="fa">
+			<dt>From <code>student_scores</code> data, create a new data structure named <code>best_student_scores</code>, storing the information (name and score) only for students with scores greater than 4.00</dt>
+			<dt>Print out the names of the students from <code>best_students</code></dt>
+		</dl>
+		<pre><code rel="Output" class="shell" data-noescape>
+			Ivan
+			Maria
+			Georgy
+		</code></pre>
+	</section>
+</section>
+<!-- <section><h2>Task2</h2>
+	<section>
+		<dl class="fa">
+			<dt>Using the same information as in Task1, i.e.</dt>
+		</dl>
+		<a href="images/task1_student_with_high_score.png"><img src="images/task1_student_with_high_score.png" style="height: 50vh"></a>
+	</section>
+	<section>
+	<dl class="fa">
+		<dt>Print out the name and score of the student with maximum score</dt>
+		<dt>Print out the name and score of the student with minimum score</dt>
+	</dl>
+</section>
+</section> -->
 
 <section class="disclaimer" data-background="/ProgressBG-VC-Python/outfit/images/for_slides/the_end_on_sand.jpg">
 	 <p>These slides are based on</p>
