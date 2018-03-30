@@ -3,7 +3,7 @@ Num_tries = input("How many names are you going to enter:")
 tries = 0
 list = []
 # iep: discuss Num_tries || 3 ?
-while tries < 3:
+while tries < Num_tries:
     y=str(input("Enter a name, please:\n"))
     list.append(y)
     tries += 1

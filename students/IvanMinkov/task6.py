@@ -21,8 +21,11 @@ dist_close_to_Sofia = []
 for place in distances_from_sofia :
     if place[1] < 1500:
         dist_close_to_Sofia = dist_close_to_Sofia + [place]
+
 print("OutputDistances bellow 1500km from Sofia are:")
-for place in sorted(dist_close_to_Sofia, key=lambda dist_close_to_Sofia:dist_close_to_Sofia[1]):
-    print("{} - {}".format(place[0],place[1]))
+print( dist_close_to_Sofia )
+
+# for place in sorted(dist_close_to_Sofia, key=lambda dist_close_to_Sofia:dist_close_to_Sofia[1]):
+#     print("{} - {}".format(place[0],place[1]))
 
 
