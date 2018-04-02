@@ -1,2 +1,3 @@
 Concatenate many strings - which is faster: + or .format
 Why == coerse types !!!!
+example for manipulating global dict with dunder method...
