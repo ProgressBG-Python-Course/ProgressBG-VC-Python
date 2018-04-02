@@ -272,6 +272,8 @@
 			<dt>You can pass to <code>raise</code> an <em>ExceptionType</em> to be raised</dt>
 			<code></code>
 			<dt>Or you can skip the  <em>ExceptionType</em> and write just <code>raise</code></dt>
+			<dd>In that case, the last error will be re-raised</dd>
+			<dt><a href="https://docs.python.org/3/reference/simple_stmts.html#raise" class="advanced">The <code>raise</code> statement @python3 docs</a></dt>
 		</dl>
 	</section>
 	<section><h3><code>raise</code> <em>ExceptionType</em> - example</h3>
@@ -282,14 +284,52 @@
 		</code></pre>
 		<p>surely, you do not want to do that - it's just an example!</p>
 	</section>
-</section>
-<!--
-<section><h1>MainSectionTitle</h1></section>
-<section><h2>MainSectionTitle</h2>
-	<section><h3>SubSectionTitle</h3>
-
+	<section><h3><code>raise</code> without arguments - example</h3>
+		<dl class="fa">
+			<dt>A common case for <code>raise</code> without argument is when you want the error to be thrown as normally, but to take some actions (logging, rollback, etc.) before that</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			try:
+			  db_insert()
+			except:
+			  rollback()
+			  raise
+			else:
+			  commit()
+		</code></pre>
 	</section>
-</section> -->
+	<section><h3>raising custom exceptions</h3>
+		<dl class="fa">
+			<dt>A common use-case for <code>raise</code> statement is when we want to raise a custom exception (especially useful when writing APIs)</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			# define custom exception
+			class UserNameError(Exception):
+			  pass
+
+			# do the potential dangerous stuff in try:
+			try:
+			  user_name = input("Enter your name: ")
+			  if len(user_name)&lt;3:
+			    raise UserNameError
+			except UserNameError:
+			  print("User name must be at least 3 symbols long")
+			except:
+			    print('Oops! Something went wrong!')
+		</code></pre>
+	</section>
+</section>
+
+
+<section><h1>Resources</h1></section>
+<section><h2>Resources</h2>
+	<section><h3>Blogs, wiki, docs</h3>
+		<dl class="fa">
+			<dt><a href="https://wiki.python.org/moin/HandlingExceptions">Handling Exceptions @wiki.python.org</a></dt>
+			<dt><a href="https://docs.python.org/3/tutorial/errors.html">Errors and Exceptions @ The Python Tutorial</a></dt>
+		</dl>
+	</section>
+</section>
 
 
 <section><h1>Exercises</h1></section>
@@ -421,7 +461,7 @@
 	<dl class="fa">
 		<dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
 		<dd>For instance: <b>iep_task_name.py</b> or <b>iep_tasks.rar</b></dd>
-		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW:acad_to_astro_hours">progressbg.python.course@gmail.com</a></dt>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW:exceptions">progressbg.python.course@gmail.com</a></dt>
 	</dl>
 </section>
 
