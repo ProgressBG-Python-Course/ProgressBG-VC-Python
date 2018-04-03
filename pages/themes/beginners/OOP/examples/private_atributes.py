@@ -17,5 +17,6 @@ maria.__age = 100
 print(maria.__age)
 print(maria)
 
+print( maria.__dir__())
 # name = Maria Popova
 # age = 25

@@ -3,6 +3,9 @@ class Person:
 		self.name = name
 		self.age = age
 
+	def __str__(self):
+		return "{} = {}".format(self.name, self.age)
+
 	def greet(self):
 		print("Hi there! I'm {}, {} years old!".format(self.name, self.age))
 
