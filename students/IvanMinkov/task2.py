@@ -8,6 +8,5 @@ sur_names = ["Ivanov", "Popova", "Petrov"]
 
 names = []
 for s in range(3):
-		# iep: discuss: this (interpolates names on each iter) vs append
     names = names + [first_names[s]] + [sur_names[s]]
 print (names)

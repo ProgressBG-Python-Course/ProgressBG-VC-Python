@@ -1,23 +1,13 @@
+# define custom exception
+class UserNameError(Exception):
+  pass
+
+# do the potential dangerous stuff in try:
 try:
-	x = int( input("x = ") )
-	y = int( input("y = ") )
-	res = x/y
-except Exception:
-	print("Oopps")
-except ValueError:
-	print("You have not entered a number!!!")
-except ZeroDivisionError:
-	print("Can not divide by 0!!!")
-else:
-	print(res)
-
-
-
-
-
-
-
-
-
-# print("End of program")
-
+  user_name = input("Enter your name: ")
+  if len(user_name)<3:
+    raise UserNameError
+except UserNameError:
+  print("User name must be at least 3 symbols long")
+except:
+    print('Oops! Something went wrong!')
