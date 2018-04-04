@@ -206,7 +206,7 @@
 	<section><h3 class="advanced">Attributes - internal</h3>
 		<dl class="fa">
 			<dt>Attributes are stored internally in a dictionary structure</dt>
-			<dt>Each object has associated dictionary attribute, named <code>__dict__</code>, which store an object’s (writeable) attributes</dt>
+			<dt>Each object has associated dictionary attribute, named <code>__dict__</code>, which store an object's (writeable) attributes</dt>
 		</dl>
 		<pre><code rel="Python" class="python">
 			class Person:
@@ -242,7 +242,6 @@
 		</code></pre>
 	</section>
 </section>
-
 
 <section><h1>Methods</h1></section>
 <section><h2>Methods</h2>
@@ -458,10 +457,10 @@
 	</section>
 </section>
 
-<section><h1>Encapsulation</h1></section>
-<section><h2>Encapsulation</h2>
-	<section><h3></h3>
-		<table>
+<section><h1>Encapsulation and Data Hiding</h1></section>
+<section><h2>Encapsulation and Data Hiding</h2>
+	<section><h3>Python's Way - Conventions</h3>
+		<table style="font-size: .8em">
 			<tr>
 				<th>Naming</th>
 				<th>Type</th>
@@ -486,9 +485,7 @@
 	</section>
 	<section><h3>Private Attributes</h3>
 		<p class="note" style="1.5em">Python did not provide a truly <b>private attributes!</b></p>
-		<p>Instead, a convention is used to name the attribute, which must not be accessed outside of the class with <b>double underscore</b></p>
-	</section>
-	<section><h3>example</h3>
+		<p>The dunder attributes are just prefixed with the <code>_ClassName</code></p>
 		<pre><code rel="Python" class="python">
 			class Person:
 				def __init__(self, name, age):
@@ -496,18 +493,58 @@
 					self.__age = age
 
 				def __str__(self):
-					return """
-						name = {}
-						__age = {}
-					""".format(self.name, self.__age)
-				def greet(self):
-					print("Hi there! I'm {}, {} years old!".format(self.name, self.age))
+					return "name = {}; __age = {}".format(self.name, self.__age)
 
 			maria = Person("Maria Popova", 25)
-			maria.__age = 100
 
-			print(maria.__age)
+			# let's try to change Maria's age:
+			maria.__age = 100
+			print("maria.__age is set to ", maria.__age)
 			print(maria)
+
+			# but __age is not hidden! Look:
+			maria._Person__age = 100
+			print("maria.__age is set to ", maria.__age)
+			print(maria)
+		</code></pre>
+	</section>
+</section>
+
+<section><h1>Inspecting Classes and Objects</h1></section>
+<section><h2>Inspecting Classes and Objects</h2>
+	<section><h3><code>__dict__ - revealing object's dictionary</code></h3>
+		<pre><code rel="Syntax" class="python">
+			class Person:
+				def __init__(self, name, age):
+					self.name = name
+					self.__age = age
+
+			maria = Person("Maria Popova", 25)
+
+			# inspect object attributes dictionary:
+			print( maria.__dict__ )
+
+			# inspect class attributes dictionary:
+			print( Person.__dict__ )
+		</code></pre>
+	</section>
+	<section><h3><code>dir()</code> - revealing all object's attributes</h3>
+		<dl class="fa">
+			<dt>The built-in function <code>dir()</code> used with an object name as argument will reveal most of the attributes defined for that object. <span style="font-size: .9em">Check <a href="https://docs.python.org/3/library/functions.html#dir">dir() on python3 docs</a> for more information.</span></dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			class Person:
+				def __init__(self, name, age):
+					self.name = name
+					self.__age = age
+
+			maria = Person("Maria Popova", 25)
+
+			print("maria has next attributes:")
+			print( dir(maria) )
+
+			# of course, dir() is calling the __dir__() method on the object, but it's better to use the function call, though you can do that:
+			print( maria.__dir__() )
 		</code></pre>
 	</section>
 </section>
@@ -522,7 +559,6 @@
 <section><h2>blogs, tutorials</h2>
 	<section>
 		<dl class="fa">
-			<dt><a href="https://docs.python.org/3/tutorial/classes.html">Classes @The Python Tutorial </a></dt>
 			<dt><a href="https://www.python-course.eu/python3_object_oriented_programming.php">Object-Oriented Programming</a> www.python-course.eu</dt>
 		</dl>
 	</section>
@@ -543,19 +579,6 @@
 
 	</section>
 </section>
-
-<section><h1>Inspecting Classes and Objects</h1></section>
-<section><h2>Inspecting Classes and Objects</h2></section>
-	<section><h3><code>__dict__</code></h3>
-		<pre><code rel="Syntax" class="python">
-			# inspect object attributes dictionary:
-			obj.__dict__
-
-			# inspect class attributes dictionary:
-			ClassName.__dict__
-		</code></pre>
-	</section>
-</section> -->
 
 
 <section id="hw"><h1>Exercises</h1></section>
