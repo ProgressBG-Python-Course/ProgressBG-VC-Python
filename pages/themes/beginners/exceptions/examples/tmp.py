@@ -1,12 +1,12 @@
-def get_user_number():
-  user_number = int(input("Enter a number: "))
-  return user_number
+class MyError(Exception):
+	pass
+
 
 try:
-  x = get_user_number()
+  x = 2
   res = 10/x
   print("Result is {}".format(res))
-except ValueError:
+except TypeError:
   print("You did not enter a number!")
 except ZeroDivisionError:
   print("Enter a number different from zero (0)!")

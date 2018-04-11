@@ -1,3 +1,5 @@
-user_name = "ada"
-str = "{1:10s} - {}".format("hello", user_name)
-print(str)
+# 4   = > 3
+# 64  = > x
+
+lab_to_astr = 3/4
+print(64*lab_to_astr)
