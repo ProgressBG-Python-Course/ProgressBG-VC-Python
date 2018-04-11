@@ -1,3 +1,7 @@
 Concatenate many strings - which is faster: + or .format
 DONE: Why == coerse types !!!!
 example for manipulating global dict with dunder method...
+
+example on extending dunder methods, like __str__()
+
+update slides with 2 hours for Inheritance ...
