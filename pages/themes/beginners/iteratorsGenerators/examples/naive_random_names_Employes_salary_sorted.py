@@ -1,7 +1,7 @@
 from random import randint
 
 class Employee():
-  """docstring for Employee"""
+  """The very simple Employee class"""
   def __init__(self, name, salary=None):
     self.name = name
     self.salary = salary or randint(100,200)*10
@@ -20,9 +20,7 @@ class Employees():
     self.__employees_sorted = []
 
   def __sort_by_salary(self):
-    # print("sorting......................: ", self.employees[0].salary)
     if self.employees:
-      # student_list = sorted(student_list, key=lambda student: student.mark)
       self.__employees_sorted = sorted(self.employees, key=lambda o: o.salary, reverse=True)
 
     return self.__employees_sorted
@@ -33,11 +31,15 @@ class Employees():
   def sorted_by_salary(self):
     return self.__employees_sorted or self.__sort_by_salary()
 
-
 class NameMaker():
-  """docstring for Employee"""
+  """Naive generation of random "name" like string in Bulgarian """
 
   def __init__(self, limit):
+    """Summary
+
+    Args:
+        limit (int): Description
+    """
     self.limit = limit
     self.count = 0
     self.vowels = ["а","о","е","и","ю","я"]
@@ -59,7 +61,7 @@ class NameMaker():
     letter_functions = [self.__gen_random_consonant, self.__gen_random_vowel]
 
     for i in range(self.name_length):
-      # give 50% - 50% chance for a vowel (not quite, but it's ok):
+      # give 50% - 50% chance for a vowel (not quite exact, but it's ok for demo):
       vowel_chance = randint(0,1)
       self.name.append( letter_functions[vowel_chance]() )
 

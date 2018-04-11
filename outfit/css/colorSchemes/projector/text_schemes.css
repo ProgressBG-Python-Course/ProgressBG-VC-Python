@@ -46,8 +46,10 @@
     font-weight: bold;
 }
 .reveal .note{
-    font-style: italic;
     color: #ef9a9a;
+}
+.reveal span.note{
+    font-style: italic;
 }
 .reveal .keyconcept, .reveal .keyword{
     color: #C5E1A5;
