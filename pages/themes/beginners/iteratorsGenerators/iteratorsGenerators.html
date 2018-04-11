@@ -77,8 +77,8 @@
 		<dl class="fa">
 			<dt><span class="note">iterate</span> means to repeat something several times</dt>
 			<dd>exactly what we've done in loops.</dd>
-			<dt>We can iterate over objects, too. If we implement the <code>__iter__</code> method.</dt>
-			<dt>What an <code>iter</code> method should do, is defined in "The Iterator Protocol" - a concept, present in most modern programming languages.</dt>
+			<dt>An <span class="note">iterator</span> is an object that knows how to access items from a collection one at a time, while keeping track of its current position within that sequence.</dt>
+			<dt>An <span class="note">iterable</span> is an object, which has method for returning iterator.</dt>
 		</dl>
 	</section>
 	<section><h3><span class="note">iterable</span> and the <code class="note">__iter__</code> method</h3>
@@ -86,7 +86,9 @@
 			<dt>an object, implementing the <code>__iter__</code> method is called <span class="note">itarable</span></dt>
 			<dt>The <code>__iter__</code> method returns an <em>iterator</em>.</dt>
 			<dt><span class="note"><em>iterator</em> is any object with a method called <code>__next__</code></span>, which is callable without any arguments.</dt>
-			<dt>The iterator protocol is changed a bit in Python 3. In the old protocol, iterator objects should have a method called <code>next</code> rather than <code>__next__</code></dt>
+			<dt>The iterator protocol in Python 2/3.</dt>
+			<dd>in Python 2 an iterator object should have a method called <code>next()</code></dd>
+			<dd>in Python 3 an iterator object should have a method called <code>__next__()</code></dd>
 		</dl>
 	</section>
 	<section><h3><span class="note">iterator</span> and <code style="note">__next__</code> method</h3>
@@ -157,8 +159,8 @@
 <section><h2>Generators</h2>
 	<section><h3>Overview</h3>
 		<dl class="fa">
-			<dt>A generator is a kind of iterator that is defined with normal function syntax</dt>
-			<dt>Or more formally: a Python generator is a function which returns a generator iterator by calling <code class="note">yield</code></dt>
+			<dt>A Generator is a function that works as a factory for iterators.</dt>
+			<dt>Or more formally: a Python generator is a function which returns an iterator by calling <code class="note">yield</code></dt>
 			<dt>Any function that contains a <code class="note">yield</code> statement can be called a generator!</dt>
 		</dl>
 	</section>
