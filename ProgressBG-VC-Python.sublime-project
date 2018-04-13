@@ -11,7 +11,7 @@
 	"settings":
 	{
 		"dictionary": "Packages/Language - Bulgarian/OldBulgarian.dic",
-		"show_definitions": false,
+		"show_definitions": true,
 		"spell_check": true,
 		"tab_size": 2,
 		"translate_tabs_to_spaces": true,
