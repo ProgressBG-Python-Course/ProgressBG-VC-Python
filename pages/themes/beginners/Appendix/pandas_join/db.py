@@ -11,7 +11,6 @@ def create_tables(con):
   c = con.cursor()
 
   tableA = """
-  DROP TABLE tableA;
   CREATE TABLE IF NOT EXISTS tableA (
       -- id integer PRIMARY KEY,
       a1 integer NOT NULL,
