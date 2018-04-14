@@ -171,9 +171,8 @@
   </section>
   <section><h3>Static Method</h3>
     <dl class="fa">
-      <dt>A static method does not receive an implicit first argument.</dt>
-      <dt>A static method can’t access or modify class state</dt>
-      <dt>A static method is also bound to the class, not to an object of the class</dt>
+      <dt class="note">A static method does not receive an implicit first argument.</dt>
+      <dt>It is like normal function, but placed in a class.</dt>
       <dt>Static methods are generally used to create utility functions.</dt>
     </dl>
   </section>
@@ -183,39 +182,63 @@
           @staticmethod
           def foo(arg1, arg2, ...):
     </code></pre>
-    <p class="note"><code>cls</code> will be bound to class, not to instance.</p>
+    <p>Note, that no implicit argument is passed to foo()</p>
   </section>
   <section><h3>Static Method  - Example</h3>
     <pre><code rel="Python" class="python">
       class Person():
         @staticmethod
-        def validate_age():
+        def validate_age(age):
           if not 0 < age < 100:
             raise ValueError("Invalid age value")
 
         def __init__(self, name, age):
           self.name = name
-          self.age = age
-
-          self.increment_counter()
-          # attach count to an object
-          self.count = Person.count
-
+          try:
+            self.validate_age(age)
+          except:
+            raise
+          else:
+            self.age = age
 
         def __str__(self):
-          return "{}. {}: {}".format(self.count, self.name, self.age)
-
+          return "{}: {}".format(self.name, self.age)
 
       maria = Person("Maria", 20)
-      pesho = Person("Pesho", 30)
-
       print(maria)
-      print(pesho)
 
-      # obviously, we would not want that. So, be careful with class methods!
-      maria.increment_counter()
-      pesho.increment_counter()
+      pesho = Person("Pesho", 300)
+      print(pesho)
     </code></pre>
+  </section>
+  <section><h3>Method vs Class Method vs Static Method</h3>
+    <pre><code rel="Python" class="python">
+      class A():
+        @staticmethod
+        def staticMethod():
+          print("STATIC method fired!")
+          print("Nothing is bound to me (but I'm defined inside a class)")
+          print("~" * 30)
+
+        @classmethod
+        def classMethod(cls):
+          print("CLASS method fired!")
+          print(str(cls) + " is bound to me")
+          print("~" * 30)
+
+        # normal method
+        def normalMethod(self):
+          print("'normalMethod' fired!")
+          print(str(self) + " is bound to me")
+          print("~" * 30)
+
+
+      a = A()
+      a.staticMethod()
+      a.classMethod()
+      a.normalMethod()
+    </code></pre>
+
   </section>
 </section>
 

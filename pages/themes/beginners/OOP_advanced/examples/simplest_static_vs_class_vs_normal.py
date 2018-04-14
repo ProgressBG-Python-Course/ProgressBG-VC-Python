@@ -18,10 +18,7 @@ class A():
     print("~" * 30)
 
 
-  def __init__(self, val):
-    self.val = val
-
-a = A(1)
+a = A()
 a.staticMethod()
 a.classMethod()
 a.normalMethod()
