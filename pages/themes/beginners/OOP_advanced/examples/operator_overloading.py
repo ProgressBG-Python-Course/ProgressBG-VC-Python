@@ -14,8 +14,7 @@ class Employee(Person):
     self.salary = salary
 
   def __str__(self):
-    # return super().__str__() + ". Has salary: {}".format(self.salary)
-    return Person.__str__(self) + ". Has salary: {}".format(self.salary)
+    return super().__str__() + ". Has salary: {}".format(self.salary)
 
   def __add__(self,other):
     return self.salary + maria.salary
@@ -27,3 +26,4 @@ print(pesho)
 print(maria)
 
 print("pesho + maria = ",pesho + maria)
+# pesho + maria =  6000

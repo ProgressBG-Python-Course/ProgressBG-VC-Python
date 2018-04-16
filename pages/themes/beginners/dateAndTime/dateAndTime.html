@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>___title___</title>
+	<title>dateAndTime</title>
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -26,7 +26,7 @@
 <body>
 	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
 		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-VC-Python/pages/agenda/agenda.html#___title___" target="_top"><i class="fa fa-home"></i></a>
+			<a class="home_link" href="/ProgressBG-VC-Python/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
 			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
 			<div class="help_text">
 				<div><span>N/Спейс</span><span>следващ слайд</span></div>
@@ -46,7 +46,7 @@
 ##################### SLIDES START #####################
 ########################################################
 -->
-<section><h1>___PresentationTitile___</h1></section>
+<section><h1>Date and Time support</h1></section>
 <section data-transition="zoom">
 	<!-- linkedin badge -->
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
@@ -71,17 +71,85 @@
 	</section>
 </section>
 
+<section><h1>Overview</h1></section>
+<section><h2>Overview</h2>
+	<dl class="fa">
+		<dt>The datetime module supplies classes for manipulating dates and times in both simple and complex ways</dt>
+		<dt>A naive object does not contain enough information to unambiguously locate itself relative to other date/time objects</dt>
+		<dt>For applications requiring aware objects, datetime and time objects have an optional time zone information attribute, tzinfo</dt>
+	</dl>
+</section>
 
-<section><h1>___MainSectionTitle___</h1></section>
-<section><h2>___MainSectionTitle___</h2>
-	<section><h3>___MainSectionSubTitle___</h3></section>
+<section><h1>class datetime.time</h1></section>
+<section><h2>class datetime.time</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>A time object represents a (local) time of day, independent of any particular day</dt>
+			<dt><a href="https://docs.python.org/3/library/time.html">time object @python3 docs</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>class datetime.date</h1></section>
+<section><h2>class datetime.date</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>A date object represents a date (year, month and day)</dt>
+			<dt><a href="https://docs.python.org/3/library/date.html">date object @python3 docs</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>class datetime.datetime</h1></section>
+<section><h2>class datetime.datetime</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>A datetime object is a single object containing all the information from a date object and a time object.</dt>
+			<dt><a href="https://docs.python.org/3/library/datetime.html#datetime-objects">datetime object @python3 docs</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>class datetime.timedelta</h1></section>
+<section><h2>class datetime.timedelta</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>A timedelta object represents a duration, the difference between two dates or times.</dt>
+			<dt><a href="https://docs.python.org/3/library/timedelta.html">timedelta object @python3 docs</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>class datetime.tzinfo</h1></section>
+<section><h2>class datetime.tzinfo</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>An abstract base class. Capture information about the offset from UTC time, the time zone name, and whether Daylight Saving Time is in effect.</dt>
+			<dt><a href="https://docs.python.org/3/library/tzinfo.html">timedelta object @python3 docs</a></dt>
+		</dl>
+	</section>
+</section>
+
+
+<section><h1>Live Demos</h1>
+	<section>
+		<p>Get weekday name for given date</p>
+	</section>
+	<section>
+		<p>Years, when my birthday will be on Sunday</p>
+	</section>
+	<section>
+		<p>Calculate if a birth date was on Easter</p>
+	</section>
 </section>
 
 
 <section id="hw"><h1>Exercises</h1></section>
-<section><h2>Task1</h2>
+<section><h2>Days until my birthday</h2>
 	<section><h3>The Task</h3>
-
+		<dl class="fa">
+			<dt>Write a function, that calculates the remaining days to your next birthday.</dt>
+		</dl>
 	</section>
 </section>
 
@@ -89,9 +157,10 @@
 	<dl class="fa">
 		<dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
 		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: ___title___">progressbg.python.course@gmail.com</a></dt>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=dateAndTime">progressbg.python.course@gmail.com</a></dt>
 	</dl>
 </section>
+
 <section class="disclaimer" data-background="/ProgressBG-VC-Python/outfit/images/for_slides/the_end_on_sand.jpg">
 	 <p>These slides are based on</p>
 	 <p>customised version of </p>

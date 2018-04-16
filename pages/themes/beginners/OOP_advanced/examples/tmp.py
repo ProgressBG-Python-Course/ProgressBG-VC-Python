@@ -1,26 +1,28 @@
 class Person():
-  age = 0
+  @staticmethod
+  def validate_age():
+    if not 0 < age < 100:
+      raise ValueError("Invalid age value")
 
   def __init__(self, name, age):
     self.name = name
     self.age = age
 
-
-class Employee(Person):
-  def __init__(self,name, age, salary):
-    # Person.__init__(self,name, age)
-    super().__init__(name, age)
-    self.salary = salary
+    self.increment_counter()
+    # attach count to an object
+    self.count = Person.count
 
 
-pesho = Employee("Pesho", 50, 400)
-
-print( pesho.name )
-print( pesho.salary )
+  def __str__(self):
+    return "{}. {}: {}".format(self.count, self.name, self.age)
 
 
+maria = Person("Maria", 20)
+pesho = Person("Pesho", 30)
 
+print(maria)
+print(pesho)
 
-
-
-
+# obviously, we would not want that. So, be careful with class methods!
+maria.increment_counter()
+pesho.increment_counter()

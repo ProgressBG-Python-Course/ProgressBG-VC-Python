@@ -83,15 +83,15 @@
 <section><h2>Static Attributes</h2>
   <section><h3>Overview</h3>
     <dl class="fa">
-      <dt>A Class is an object in Python</dt>
+      <dt class="note">A Class is an object in Python</dt>
       <dt>Class objects can have attributes: data and methods</dt>
       <dt>A Class attribute data in Python behaves like <em>static data</em> </dt>
       <dt>A Class attribute method in Python behaves like <em>static mehotd</em></dt>
     </dl>
   </section>
-  <section><h3>Class data attribute</h3>
+  <section><h3>Class data attributes (Static Attributes)</h3>
     <dl class="fa">
-      <dt>Class data attributes are shared among all Class instances</dt>
+      <dt class="note">Class data attributes are shared among all Class instances</dt>
     </dl>
     <pre><code rel="Python" class="python">
       class Person():
@@ -119,7 +119,11 @@
       print(pesho)
     </code></pre>
   </section>
-  <section><h3>Class Method</h3>
+</section>
+
+<section><h1>Class Methods</h1></section>
+<section><h2>Class Methods</h2>
+  <section><h3>Overview</h3>
     <dl class="fa">
       <dt>A class method receives the class as implicit first argument (just like an instance method receives the instance)</dt>
       <dt>Class methods have access to the state of the class</dt>
@@ -127,7 +131,7 @@
       <dt>Class methods are used to create factory methods (can emulate method overloading, which is not supported in Python)</dt>
     </dl>
   </section>
-  <section><h3>Class Method  - Syntax</h3>
+  <section><h3>Syntax</h3>
     <pre><code rel="Python" class="python">
       class Spam():
           @classmethod
@@ -135,7 +139,7 @@
     </code></pre>
     <p class="note"><code>cls</code> will be bound to class, not to instance.</p>
   </section>
-  <section><h3>Class Method  - Example</h3>
+  <section><h3>Example</h3>
     <pre><code rel="Python" class="python">
       class Person():
         count = 0
@@ -169,56 +173,85 @@
       pesho.increment_counter()
     </code></pre>
   </section>
-  <section><h3>Static Method</h3>
+</section>
+
+<section><h1>Static Methods</h1></section>
+<section><h2>Static Methods</h2>
+  <section><h3>Overview</h3>
     <dl class="fa">
-      <dt>A static method does not receive an implicit first argument.</dt>
-      <dt>A static method can’t access or modify class state</dt>
-      <dt>A static method is also bound to the class, not to an object of the class</dt>
+      <dt class="note">A static method does not receive an implicit first argument.</dt>
+      <dt>It is like normal function, but placed in a class.</dt>
       <dt>Static methods are generally used to create utility functions.</dt>
     </dl>
   </section>
-  <section><h3>Static Method  - Syntax</h3>
+  <section><h3>Syntax</h3>
     <pre><code rel="Python" class="python">
       class Spam():
           @staticmethod
           def foo(arg1, arg2, ...):
     </code></pre>
-    <p class="note"><code>cls</code> will be bound to class, not to instance.</p>
+    <p>Note, that no implicit argument is passed to foo()</p>
   </section>
-  <section><h3>Static Method  - Example</h3>
+  <section><h3>Example</h3>
     <pre><code rel="Python" class="python">
       class Person():
         @staticmethod
-        def validate_age():
+        def validate_age(age):
           if not 0 < age < 100:
             raise ValueError("Invalid age value")
 
         def __init__(self, name, age):
           self.name = name
-          self.age = age
-
-          self.increment_counter()
-          # attach count to an object
-          self.count = Person.count
-
+          try:
+            self.validate_age(age)
+          except:
+            raise
+          else:
+            self.age = age
 
         def __str__(self):
-          return "{}. {}: {}".format(self.count, self.name, self.age)
-
+          return "{}: {}".format(self.name, self.age)
 
       maria = Person("Maria", 20)
-      pesho = Person("Pesho", 30)
-
       print(maria)
-      print(pesho)
 
-      # obviously, we would not want that. So, be careful with class methods!
-      maria.increment_counter()
-      pesho.increment_counter()
+      pesho = Person("Pesho", 300)
+      print(pesho)
     </code></pre>
   </section>
 </section>
 
+<section><h1>"Normal" Method vs Class Method vs Static Method</h1></section>
+<section><h1>"Normal" Method vs Class Method vs Static Method</h1>
+  <pre><code rel="Python" class="python">
+    class A():
+      @staticmethod
+      def staticMethod():
+        print("STATIC method fired!")
+        print("Nothing is bound to me (but I'm defined inside a class)")
+        print("~" * 30)
+
+      @classmethod
+      def classMethod(cls):
+        print("CLASS method fired!")
+        print(str(cls) + " is bound to me")
+        print("~" * 30)
+
+      # normal method
+      def normalMethod(self):
+        print("'normalMethod' fired!")
+        print(str(self) + " is bound to me")
+        print("~" * 30)
+
+
+    a = A()
+    a.staticMethod()
+    a.classMethod()
+    a.normalMethod()
+  </code></pre>
+</section>
+
+</section>
 <section><h1>Inheritance</h1></section>
 <section><h2>Inheritance</h2>
   <section><h3>Overview</h3>
@@ -396,9 +429,83 @@
   </section>
 </section>
 
-<!-- <section><h1>The Pythonic Way: Duck typing, EAFP</h1></section>
-<section><h2>The Pythonic Way: Duck typing, EAFP</h2>
-  <section><h3></h3>
+<section><h1>Duck typing</h1></section>
+<section><h2>Duck typing, EAFP</h2>
+  <section><h3>Overview</h3>
+    <p class="note" style="font-size: 1.3em">If it walks like a duck  and it quacks like a duck, then it must be a duck</p>
+    <dl class="fa">
+      <dt>Duck typing is a feature of a type system where the semantics of a class is determined by his behaviour.</dt>
+    </dl>
+  </section>
+  <section><h3>simple example</h3>
+    <pre><code rel="Python" class="python">
+      class Duck:
+         def quack(self):
+            print('Quack, Quack')
+
+      class Goose:
+         def quack(self):
+            print('Quack!')
+
+      def quack(obj):
+         obj.quack()
+
+
+      donald = Duck()
+      lea = Goose()
+
+      quack(donald)
+      quack(lea)
+    </code></pre>
+  </section>
+  <section><h3>use case</h3>
+    <dl class="fa">
+      <dt>Easy <a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a> implementation</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      class Car:
+         def __init__(self, engine):
+            self.engine = engine
+         def run(self):
+             self.engine.start()
+
+      class Engine:
+        def start(self):
+          print("Engine started!")
+
+      trinity5_8 = Engine()
+      ford = Car(trinity5_8)
+
+      ford.run()
+    </code></pre>
+  </section>
+</section>
+
+<!-- <section><h1>The Pythonic Way: EAFP</h1></section>
+<section><h2>The Pythonic Way: EAFP</h2>
+  <section><h3>Overview</h3>
+    <p style="font-size: 1.3em"><abbr>EAFP</abbr><dfn id="EAFP"><span>Easier to </span><span>Ask for </span><span>Forgiveness than </span><span>Permission</span></dfn></p>
+    <dl class="fa">
+      <dt>Assumes the existence of valid keys or attributes and catches exceptions if the assumption proves false.</dt>
+      <dd>In contrast to explicitly tests for pre-conditions before making calls or lookups, as is popular in other languages</dd>
+    </dl>
+  </section>
+  <section><h3>simple example</h3>
+    <p>The Pythonic style</p>
+    <pre><code rel="Python" class="python">
+      prices = {"apples": 2.5, "oranges": 1.80}
+      try:
+          print(prices["bananas"])
+      except KeyError:
+          print("Key error")
+    </code></pre>
+    <p>Non Pythonic style</p>
+    <pre><code rel="Python" class="python">
+      if "key" in dict_:
+          value += dict_["key"]
+    </code></pre>
+  </section>
+  <section><h3>use case</h3>
 
   </section>
 </section> -->
