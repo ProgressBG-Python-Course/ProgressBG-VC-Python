@@ -20,8 +20,5 @@ pylint = "*"
 "flake8" = "*"
 bpython = "*"
 ipython = "*"
-<<<<<<< HEAD
 pandas = "*"
 jupyter = "*"
-=======
->>>>>>> gh-pages
