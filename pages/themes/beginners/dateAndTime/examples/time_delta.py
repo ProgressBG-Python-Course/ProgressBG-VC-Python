@@ -1,6 +1,6 @@
-import datetime
+from datetime import datetime
 
-
-t1 = datetime.time(21,45,0)
-t2 = datetime.time(23,0,0)
+# calculate time interval
+t1 = datetime.strptime("08:30", "%H:%M")
+t2 = datetime.strptime("12:15", "%H:%M")
 print(t2 - t1)
