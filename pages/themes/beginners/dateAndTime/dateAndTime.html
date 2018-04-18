@@ -132,14 +132,52 @@
 
 
 <section><h1>Live Demos</h1>
-	<section>
-		<p>Get weekday name for given date</p>
+	<section><h3>Get weekday name for given date</h3>
+		<pre><code rel="Python" class="python">
+			import datetime
+
+			def get_weekday_name(date):
+				named_wd = ["понеделник", "вторник", "сряда", "четвъртък", "петък", "събота", "неделя"]
+
+				wd_name = named_wd[date.weekday()]
+				return wd_name
+
+			date = datetime.datetime.strptime("06/04/18", "%d/%m/%y")
+			print( get_weekday_name(date) )
+			#петък
+		</code></pre>
 	</section>
-	<section>
-		<p>Years, when my birthday will be on Sunday</p>
-	</section>
-	<section>
-		<p>Calculate if a birth date was on Easter</p>
+	<section><h3>When will my birthday be on Sunday?</h3>
+		<pre><code rel="Python" class="python">
+			import datetime
+
+			def get_next_sunday_date(bdate, period):
+				"""get_next_sunday_date
+
+				Args:
+				    bdate (datetime): Object representing the date
+				    period (tuple): (start_year,end_year) interval to look into
+
+				Returns:
+				    list: years, on which a date will be on Sunday
+				"""
+				years = []
+
+				for y in range(*period):
+					bdate_weekday = datetime.date(y, bdate.month, bdate.day).weekday()
+
+					if bdate_weekday == 6:
+						years.append(y)
+
+				return years
+
+
+			birth_date = datetime.datetime.strptime("31/12/00", "%d/%m/%y")
+
+			sundays_years = get_next_sunday_date(birth_date, (2018,2100))
+			print(sundays_years)
+			#[2023, 2028, 2034, 2045, 2051, 2056, 2062, 2073, 2079, 2084, 2090]
+		</code></pre>
 	</section>
 </section>
 
@@ -148,14 +186,20 @@
 <section><h2>Days until my birthday</h2>
 	<section><h3>The Task</h3>
 		<dl class="fa">
-			<dt>Write a function, that calculates the remaining days to your next birthday.</dt>
+			<dt>Write a function, that calculates the remaining days from current date to your next birthday day.</dt>
+			<dt>The output should be only the number of days.</dt>
+		</dl>
+	</section>
+	<section><h3>Hint</h3>
+		<dl class="fa">
+			<dt>To calculate difference between two date objects, t1 and t2, you can use: <code>t1-t2</code> which will return a <a href="https://docs.python.org/3/library/datetime.html#timedelta-objects">timedelta Object</a></dt>
 		</dl>
 	</section>
 </section>
 
 <section><h3>Submission</h3>
 	<dl class="fa">
-		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
 		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
 		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=dateAndTime">progressbg.python.course@gmail.com</a></dt>
 	</dl>
