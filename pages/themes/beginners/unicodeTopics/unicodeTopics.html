@@ -108,18 +108,134 @@
 			<div style="font-size: 4em;letter-spacing:.9em; color: #C7E2C7; position: absolute; top:3em; left:.3em; right: 0;"><span>ছ</span>𝄞</div>
 	</div>
 	</section>
+	<section><h3>Encoding</h3>
+		<dl class="fa">
+			<dt>A Unicode string is a sequence of code points, which are numbers from 0 through 0x10FFFF (1,114,111 decimal)</dt>
+			<dt>This sequence needs to be represented as a set of bytes (1 byte can store values from 0 to (2**8)-1) in memory</dt>
+			<dt>The rules for translating a Unicode string into a sequence of bytes are called an <span class="note">encoding</span></dt>
+			<dt><a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> is a variable width character encoding capable of encoding all valid code points in Unicode using one to four 8-bit bytes</dt>
+			<dd>It's the most popular encoding, used in contemporary software systems.</dd>
+		</dl>
+	</section>
 </section>
 
 <section><h1>Python’s Unicode Support</h1></section>
 <section><h2>Python’s Unicode Support</h2>
-	<section><h3>___MainSectionSubTitle___</h3></section>
+	<section>
+		<p style="font-size: 2em" class="note">Python3 represents strings as Unicode</p>
+		<p style="font-size: 1.8em">The default encoding for Python3 source code is <span class="note">UTF-8</span></p>
+	</section>
+	<section>
+		<p>Python 3 also supports Unicode characters in identifiers</p>
+		<pre><code rel="Python" class="python">
+			низ = "This is a normal Python string :ছ 𝄞 ☕"
+			print(низ)
+			# This is a normal Python string :ছ 𝄞 ☕
+		</code></pre>
+	</section>
+	<section><h3><code>ord()</code> and <code>chr()</code> functions</h3>
+		<dl class="fa">
+			<dt><code>ord(<em>char</em>)</code> - return an integer representing the Unicode code point of <em>char</em> given.</dt>
+			<dt><code>chr(<em>i</em>)</code> - return the string representing a character whose Unicode code point is the integer i</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			print( ord('я') )
+			# 1103
+			print( chr(1103) )
+			# я
+		</code></pre>
+	</section>
+	<section><h3>Unicode symbols in Python strings</h3>
+		<dl class="fa">
+			<dt>You can use the unicode symbols directly in strings, or, you can enter them using escape sequences</dt>
+			<dt>Example - Various ways to represent symbol <a href="https://unicode-table.com/en/0462/">Cyrillic Capital Letter Yat</a></dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			# Unicode symbol in string:
+			print("Ѣ")
+
+			# Using the character name:
+			print("\N{Cyrillic Capital Letter Yat}")
+
+			# Using a 16-bit hex value code point:
+			print("\u0462")
+
+			# Using a 32-bit hex value code point:
+			print("\U00000462")
+		</code></pre>
+	</section>
 </section>
 
-<section><h1>___MainSectionTitle___</h1></section>
+<section><h1>Convert String to Bytes</h1></section>
+<section><h2>Convert String to Bytes</h2>
+	<section><h3><code>str.encode()</code> - syntax</h3>
+		<pre><code rel="Syntax" class="shell" data-noescape>
+			str.encode(encoding="utf-8", errors="strict")
+		</code></pre>
+		<dl class="fa">
+			<dt>Return an encoded version of the string as a bytes object</dt>
+			<dt>Default encoding is 'utf-8'</dt>
+			<dt>List of possible encodings: <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">Standard Encodings</a></dt>
+			<dt>The default for errors is 'strict', meaning that encoding errors raise a UnicodeError.</dt>
+			<dt>More on str.encode(): <a href="https://docs.python.org/3/library/stdtypes.html#str.encode">str.encode @python3 docs</a></dt>
+			<dt>More on bytes objects: <a href="https://en.wikiversity.org/wiki/Python_Concepts/Bytes_objects_and_Bytearrays">Bytes objects and Bytearrays</a></dt>
+		</dl>
+	</section>
+	<section><h3><code>str.encode()</code> - example</h3>
+		<pre><code rel="Python" class="python">
+			string = &quot;123абв&quot;
+
+			str_in_utf = string.encode()
+
+			print(&quot;Byte object:&quot;, str_in_utf)
+			print(&quot;Type: &quot;,type(str_in_utf) )
+			print(&quot;Length:&quot;,len(str_in_utf) )
+
+			#Byte object: b'123\xd0\xb0\xd0\xb1\xd0\xb2'
+			#Type:  &lt;class 'bytes'&gt;
+			#Length: 9
+		</code></pre>
+		<p class="note">Note, that the len() of byte object returns the number of bytes, not the number of characters encoded!</p>
+	</section>
+</section>
+
+<section><h1>Convert Bytes to String</h1></section>
+<section><h2>Convert Bytes to String</h2>
+	<section><h3><code>bytes.decode()</code> - syntax</h3>
+		<pre><code rel="Syntax" class="shell" data-noescape>
+			bytes.decode(encoding="utf-8", errors="strict")
+		</code></pre>
+		<dl class="fa">
+			<dt>Return a string decoded from the given bytes</dt>
+			<dt>Default encoding is 'utf-8'</dt>
+			<dt>List of possible encodings: <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">Standard Encodings</a></dt>
+			<dt>The default for errors is 'strict', meaning that encoding errors raise a UnicodeError.</dt>
+			<dt>More on bytes.decode(): <a href="https://docs.python.org/3/library/stdtypes.html#bytes.decode">bytes.decode @python3 docs</a></dt>
+			<dt>More on bytes objects: <a href="https://en.wikiversity.org/wiki/Python_Concepts/Bytes_objects_and_Bytearrays">Bytes objects and Bytearrays</a></dt>
+		</dl>
+	</section>
+	<section><h3><code>bytes.decode()</code> - example</h3>
+		<pre><code rel="Python" class="python">
+			str_in_bytes =  b'1\xd0\xb02\xd0\xb13\xd0\xb2'
+			str_in_utf8 = str_in_bytes.decode()
+
+			print(&quot;String object:&quot;, str_in_utf8)
+			print(&quot;Type: &quot;,type(str_in_utf8) )
+			print(&quot;Length:&quot;,len(str_in_utf8) )
+
+			#String object: 1а2б3в
+			#Type:  &lt;class 'str'&gt;
+			#Length: 6
+		</code></pre>
+		<p class="note">Note, that the len() of byte object returns the number of bytes, not the number of characters encoded!</p>
+	</section>
+</section>
+
+<!-- <section><h1>___MainSectionTitle___</h1></section>
 <section><h2>___MainSectionTitle___</h2>
 	<section><h3>___MainSectionSubTitle___</h3></section>
 </section>
-
+ -->
 <section><h1>Resources</h1></section>
 <section><h2>Resources</h2>
 	<section><h3>Texts</h3>
@@ -130,11 +246,31 @@
 </section>
 
 
-<!--
 <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Task1</h2>
-	<section><h3>The Task</h3>
-
+	<section><h3>win1251 subtitles to UTF8</h3>
+		<dl class="fa">
+			<dt>Imagine, you've downloaded a Bulgarian subtitles file, encoded in Windows-1251: <a href="Task_and_HW/cyr_subs_to_UTF/Silicon.Valley.sampleBGsubs.srt">Silicon.Valley.sampleBGsubs.srt</a></dt>
+			<dt>But you have to convert it in UTF8, as your player recognise only Unicode encoded subtitles</dt>
+			<dt> Write a program: <code>cp1251_to_utf8.py</code>, which will receive an input file name as argument and will create an UTF encoded file with the same name, but with sufix "_utf8_" added.</dt>
+		</dl>
+	</section>
+	<section><h3>Program usage example</h3>
+		<pre><code rel="Terminal - Files before conversion" class="bash" data-noescape>
+			.
+			├── cp1251_to_utf8.py
+			└── Silicon.Valley.sampleBGsubs.srt
+		</code></pre>
+		<pre><code rel="Terminal - run cp1251_to_utf8.py" class="bash" data-noescape>
+			$ python cp1251_to_utf8.py Silicon.Valley.sampleBGsubs.srt
+		</code></pre>
+		<pre><code rel="Terminal - Files after conversion" class="bash" data-noescape>
+			.
+			├── cp1251_to_utf8.py
+			├── Silicon.Valley.sampleBGsubs.srt
+			└── Silicon.Valley.sampleBGsubs_utf8_.srt
+		</code></pre>
+		<p>Make sure, that Silicon.Valley.sampleBGsubs_utf8_.srt is properly converted and readable!</p>
 	</section>
 </section>
 
@@ -146,7 +282,7 @@
 	</dl>
 </section>
 
- -->
+
 
 <section class="disclaimer" data-background="/ProgressBG-VC-Python/outfit/images/for_slides/the_end_on_sand.jpg">
 	 <p>These slides are based on</p>
