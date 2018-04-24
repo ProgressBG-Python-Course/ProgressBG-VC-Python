@@ -255,8 +255,8 @@
 </section>
 
 
-<section><h1>Unittest; Doctest;</h1></section>
-<section><h2>Unittest; Doctest;</h2>
+<section><h1>Unittest</h1></section>
+<section><h2>Unittest</h2>
 	<section><h3>Test-Driven Development (TDD)</h3>
 		<dl class="fa">
 			<dt>TDD means that the developer first writes tests that define the main operation and edge cases for a function, and then writes the function.</dt>
@@ -326,7 +326,57 @@
 		</dl>
 	</section>
 	<section><h3>Example</h3>
+		<pre><code rel="floor_div_pytest.py" class="python">
+			def floor_div(x,y):
+			  return x/y
 
+			def test_floor_div_with_positive_integers():
+			  assert floor_div(4,3) == 1
+		</code></pre>
+		<pre><code rel="Terminal" class="shell" data-noescape style="font-size: .8em">
+			>pytest floor_div_pytest.py
+			========================================================================= test session starts =========================================================================
+			platform linux -- Python 3.6.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
+			rootdir: /data/projects/www/wwwcourses.github.io/ProgressBG-VC-Python/pages/themes/beginners/practicalities/examples, inifile: pytest.ini
+			collected 1 item
+
+			floor_div_pytest.py F                                                                                                                                           [100%]
+
+			============================================================================== FAILURES ===============================================================================
+			________________________________________________________________ test_floor_div_with_positive_integers ________________________________________________________________
+
+			    def test_floor_div_with_positive_integers():
+			>     assert floor_div(4,3) == 1
+			E     assert 1.3333333333333333 == 1
+			E      +  where 1.3333333333333333 = floor_div(4, 3)
+
+			floor_div_pytest.py:6: AssertionError
+			====================================================================== 1 failed in 0.03 seconds =======================================================================
+		</code></pre>
+	</section>
+	<section><h3>Customizing test collection</h3>
+		<pre><code rel="pytest.ini" class="python">
+			# discover tests from every Python file
+			[pytest]
+			python_files = *.py
+		</code></pre>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			$pytest --collect-only
+			========================================================================= test session starts =========================================================================
+			platform linux -- Python 3.6.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
+			rootdir: /data/projects/www/wwwcourses.github.io/ProgressBG-VC-Python/pages/themes/beginners/practicalities/examples, inifile: pytest.ini
+			collected 3 items
+			&lt;Module 'floor_div_pytest.py'&gt;
+			  &lt;Function 'test_floor_div_with_positive_integers'&gt;
+			&lt;Module 'floor_div_test.py'&gt;
+			  &lt;UnitTestCase 'PositiveTest'&gt;
+			    &lt;TestCaseFunction 'test_floor_div_with_positive_integers'&gt;
+			&lt;Module 'pytest_sample.py'&gt;
+			  &lt;Function 'test_answer'&gt;
+
+			==================================================================== no tests ran in 0.01 seconds =====================================================================
+			(ProgressBG-VC-Python)nemsys@X230~gh-pages-&gt;
+		</code></pre>
 	</section>
 </section>
 
@@ -338,6 +388,7 @@
 		<dl class="fa">
 			<dt><a href="http://docs.python-guide.org/en/latest/writing/style/">Code Style @The Hitchhiker’s Guide to Python</a></dt>
 		</dl>
+		<dt><a href="https://github.com/vintasoftware/python-linters-and-code-analysis">Python Linters and Code Analysis tools curated list @github</a></dt>
 	</section>
 	<section><h3>Videos</h3>
 		<p><a href="https://www.youtube.com/watch?v=wf-BqAjZb8M">Raymond Hettinger - Beyond PEP 8 -- Best practices for beautiful intelligible code - PyCon 2015</a></p>
@@ -345,7 +396,7 @@
 	</section>
 </section>
 
-
+<!--
 <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Task1</h2>
 	<section><h3>The Task</h3>
@@ -361,7 +412,7 @@
 	</dl>
 </section>
 
-
+ -->
 
 <section class="disclaimer" data-background="/ProgressBG-VC-Python/outfit/images/for_slides/the_end_on_sand.jpg">
 	 <p>These slides are based on</p>
