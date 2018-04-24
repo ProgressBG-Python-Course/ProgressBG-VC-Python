@@ -315,9 +315,9 @@ section.copyright>.license{
 }
 .reveal section iframe{
   display: block;
-  margin: 1em 0 1em 0;
+  margin: 1em auto;
   width: 80%;
-  height: 40vh;
+  height: 70vh;
   /*height: auto;*/
 }
 .reveal section iframe.resultFrame{
