@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>dataScienceBasics</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-VC-Python/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-VC-Python/outfit/css/themes/dark.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-VC-Python/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-VC-Python/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-VC-Python/pages/agenda/agenda.html#dataScienceBasics" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div><span>N/Спейс</span><span>следващ слайд</span></div>
+				<div><span>P</span><span>предишен слайд</span></div>
+				<div><span>O</span><span>всички слайдове</span></div>
+				<div><span>ctrl+left click</span><span>увеличава елемента</span></div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC-Python/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC-Python/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC-Python/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Data science basics</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-VC-Python/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2018,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+
+<!-- <section><h1>The data science process</h1></section>
+<section><h2>The data science process</h2>
+	<section><h3>___MainSectionSubTitle___</h3></section>
+</section> -->
+
+<section><h1>Frame the concepts: Big data, Machine Learning, NLP, No SQL, Graph Database, Data Visualization</h1></section>
+<section><h2>Frame the concepts: Big data, Machine Learning, No SQL, Graph Database, NLP, Data Visualization</h2>
+	<section><h3 class="note">Big Data</h3>
+		<dl class="fa">
+			<dt>Collection of datasets being so large, that its difficult to process with the traditional techniques, like RDBMS</dt>
+			<dt>The rule of <b>V</b>s:</dt>
+			<dd>Volume - or how much are the data?</dd>
+			<dd>Variety - how diverse are different types of data?</dd>
+			<dd>Velocity - at what speed are the new data generated?</dd>
+			<dd>(Veracity - how accurate is the data?)</dd>
+		</dl>
+	</section>
+	<section><h3>Big Data - Tools and Techniques</h3>
+		<dl class="fa">
+			<dt><a href="http://hadoop.apache.org/">Apache Hadoop</a> - <span>The Apache™ Hadoop® project develops open-source software for reliable, scalable, distributed computing.</span></dt>
+		</dl>
+	</section>
+	<section><h3>Machine Learning</h3>
+		<blockquote cite="https://en.wikipedia.org/wiki/Machine_learning">Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to "learn" (i.e., progressively improve performance on a specific task) with data, without being explicitly programmed</blockquote>
+	</section>
+	<section><h3>Machine Learning</h3>
+		<dl class="fa">
+			<dt>Coined in 1959 by Arthur Samuel</dt>
+			<dt>Algorithm that can learn from data and predict new data states</dt>
+			<dd>Supervised and Unsupervised Learning</dd>
+			<dt>Interweaves the advantages in computational statistics, data mining, big data, neural networks, logic programming and rule-based computing</dt>
+		</dl>
+	</section>
+	<section><h3>Machine_learning with Python</h3>
+		<dl class="fa">
+			<dt>numpy</dt>
+			<dt>pandas</dt>
+			<dt>Tensorflow</dt>
+		</dl>
+	</section>
+	<section><h3>Natural Language Processing (NLP)</h3>
+		<dl class="fa">
+			<dt>Conceptualised in the 1950s</dt>
+			<dd>ELIZA by by Joseph Weizenbaum</dd>
+			<dd>MARGIE by Schank et all., 1975</dd>
+			<dt>Evolves rapidly with evolution of Machine Learning and Deep Learning</dt>
+			<dd>Google Translate</dd>
+			<dd>Inteligent Chat Bots</dd>
+		</dl>
+	</section>
+	<section><h3>NLP with Python</h3>
+		<dl class="fa">
+			<dt>NLTK</dt>
+			<dt>Stanford’s CoreNLP</dt>
+		</dl>
+	</section>
+	<section><h3>NoSQL Data Stores</h3>
+		<dl class="fa">
+			<dt>Tries to solve the problems of storing and manipulating data, which can not be structured efficiently into tables</dt>
+			<dt>Variety of types, most popular:</dt>
+			<dd>Key-value pair</dd>
+			<dd>Document-oriented</dd>
+			<dd>Graph Database</dd>
+		</dl>
+		<section><h3>Python and NoSQL stores</h3>
+			<dl class="fa">
+				<dt>pickleDB for key-value pairs</dt>
+				<dt>PyMongo for MongoDB (document-oriented DB)</dt>
+				<dt>Neo4j Python Driver (Graph Database)</dt>
+			</dl>
+		</section>
+	</section>
+	<section><h3>Data Visualization</h3>
+		<dl class="fa">
+			<dt>Matplotlib for classic visualizations</dt>
+			<dt>Bokeh for interactive visualizations capable of handling very large and/or streaming datasets.</dt>
+			<dt>lightning-python for reproducible and real-time visualization with Python and d3.js</dt>
+		</dl>
+	</section>
+</section>
+
+<section><h1>Anaconda notes</h1>
+	<p>Next sections demonstrate the usage of various Python's Data Science related packages. You can install them separatelly, as given in the slides, or you can skip the installations, and use the <a href="https://conda.io/docs/glossary.html#anaconda-glossary">Anaconda</a> Python's distribution</a> (or <a href="https://conda.io/docs/glossary.html#miniconda-glossary">Miniconda</a>), bundled with data science and machine learning related applications</p>
+</section>
+
+<section><h1>iPython and Jupiter Notebook</h1></section>
+<section><h2>iPython and Jupiter Notebook</h2>
+	<section><h3>iPython</h3>
+		<dl class="fa">
+			<dt>IPython - an enhanced Interactive Python, which provides:</dt>
+			<dd>A powerful interactive shell</dd>
+			<dd>Flexible, embeddable interpreters to load into your own projects</dd>
+			<dd>Support for interactive data visualization and use of GUI toolkits.</dd>
+			<dd>Easy to use, high performance tools for parallel computing.</dd>
+			<dd class="note">A kernel for Jupyter.</dd>
+		</dl>
+	</section>
+	<section><h3>iPython install</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			#install iPython with pip3
+			$ pip3 install ipython
+
+			#install iPython on pipenv
+			$ pipenv install ipython
+		</code></pre>
+	</section>
+	<section><h3>Jupyter Notebook</h3>
+		<dl class="fa">
+			<dt>Live Demo on <a href="https://colab.research.google.com">Google Colaboratory</a></dt>
+		</dl>
+	</section>
+	<section><h3>Jupyter Notebook - install</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			#install jupyter with pip3
+			$ pip3 install jupyter
+
+			#install jupyter on pipenv
+			$ pipenv install jupyter
+		</code></pre>
+	</section>
+</section>
+
+
+<section><h1>numpy</h1></section>
+<section><h2>numpy</h2>
+	<section><h3>numpy overview</h3>
+		<dl class="fa">
+			<dt><a href="https://pypi.org/project/numpy/">numpy</a> is a python package that adds support for:</dt>
+			<dd>large, multi-dimensional arrays and matrices</dd>
+			<dd>large collection of high-level mathematical functions to operate on these arrays</dd>
+			<dt>Written mainly in C langualge</dt>
+			<dt>numpy arrays and operations are much faster than Python's list equivalents.</dt>
+			<dt>pandas is built on top of numpy</dt>
+		</dl>
+	</section>
+	<section><h3>data types</h3>
+		<dl class="fa">
+			<dt>Numpy supports much finer data types than Python </dt>
+			<dd><a href="https://docs.scipy.org/doc/numpy-1.14.0/user/basics.types.html">Data types @docs.scipy.org</a></dd>
+		</dl>
+	</section>
+	<section><h3>N-Dimensional Arrays</h3>
+		<dl class="fa">
+			<dt>The main object in numpy is the <span class="note">homogeneous</span> multidimensional array</dt>
+			<dt>It is a table of elements (usually numbers), <span class="note">all of the same type</span>, indexed by a tuple of positive integers for each dimension.</dt>
+			<dd>In numpy, dimensions are called <span class="note">axes</span></dd>
+			<dd>Number of axes defines the <span class="note">rank</span> of the array</dd>
+		</dl>
+	</section>
+	<section><h3>Examples</h3>
+		<dl class="fa">
+			<dt>numpy array examples:</dt>
+			<dd><a href="examples/numpy/NDArrays.html">See as html</a></dd>
+			<dd>Or play online (if you have Google Account), or download the notebook: <a href="https://drive.google.com/file/d/15rB08uVo-LVdcmPjqbnTnRiGW10_HAv2/view?usp=sharing">NDArrays.ipynb</a></dd>
+		</dl>
+	</section>
+	<section><h3>References</h3>
+		<dl class="fa">
+			<dt><a href="https://docs.scipy.org/doc/numpy-1.13.0/user/quickstart.html#functions-and-methods-overview">Functions and Methods Overview</a></dt>
+			<dt><a href="https://pypi.org/project/numpy/">numpy</a> in PyPi</dt>
+		</dl>
+	</section>
+</section>
+
+
+<section><h1>pandas</h1></section>
+<section><h2>pandas</h2>
+	<section><h3>Install</h3>
+		<pre><code rel="Terminal" class="shell" data-noescape>
+			#install pandas with pip3
+			$ pip3 install pandas
+
+			#install pandas on pipenv
+			$ pipenv install pandas
+		</code></pre>
+	</section>
+	<section><h3>Pandas Series Object</h3>
+		<dl class="fa">
+			<dt>A Pandas Series is <span class="note">a one-dimensional array</span> of indexed data.</dt>
+			<dt>It wraps both a sequence of values <span class="note">and a sequence of indices</span></dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			import pandas as pd
+
+			data = pd.Series([1,2,3,4])
+			print(data)
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			0    1
+			1    2
+			2    3
+			3    4
+			dtype: int64
+		</code></pre>
+	</section>
+	<section><h3>Series Explicit Indexing</h3>
+		<dl class="fa">
+			<dt>The explicit index definition gives the Series object additional capabilities compared to numpy arrays</dt>
+			<dd class="note">i.e. the index need not to be an integer, but can consist of values of any desired type</dd>
+		</dl>
+		<pre><code rel="Python" class="python">
+			data = pd.Series([1,2,3,4], index=['a', 'b', 'c', 'd'])
+			print(data)
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			a    1
+			b    2
+			c    3
+			d    4
+			dtype: int6
+		</code></pre>
+	</section>
+	<section><h3>Series as specialized dictionary</h3>
+		<dl class="fa">
+			<dt>By default, a Series index is drawn from <span class="note">the sorted keys</span> of the dict.</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			prices = {
+			  "apples": 1.5,
+			  "oranges": 2.3,
+			  "bananas": 2.5
+			}
+			data = pd.Series(prices)
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			apples     1.5
+			bananas    2.5
+			oranges    2.3
+			dtype: float64
+		</code></pre>
+	</section>
+	<section><h3>Series slicing</h3>
+		<dl class="fa">
+			<dt>the Series also supports array-style operations such as slicing</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			prices = {
+			  "apples": 1.5,
+			  "oranges": 2.3,
+			  "bananas": 2.5,
+			  "strawberies": 3.5
+			}
+			data = pd.Series(prices)
+			print(data["apples":"bananas"])
+		</code></pre>
+		<pre><code rel="Output" class="shell" data-noescape>
+			apples     1.5
+			bananas    2.5
+			dtype: float64
+		</code></pre>
+	</section>
+	<section><h3>Pandas DataFrame Object</h3>
+		<dl class="fa">
+			<dt>a DataFrame is an analog of <span class="note">a two-dimensional array</span> with both flexible row indices and flexible column names</dt>
+			<dt>DataFrame is an analog of a generalized NumPy array</dt>
+			<dt>You can think of a DataFrame as a sequence of aligned (sharing dame index) Series objects</dt>
+		</dl>
+	</section>
+	<section><h3>Constructing DataFrame from a single Series object.</h3>
+		<dl class="fa">
+			<dt>A DataFrame is a collection of Series objects, and a single-column DataFrame can be constructed from a single Series</dt>
+		</dl>
+	</section>
+
+
+<!-- 	<section><h3>Pandas DataFrame Object</h3></section>
+	<section><h3>Pandas DataFrame Object</h3></section>
+ -->
+
+
+	<section><h3>References</h3>
+		<dl class="fa">
+			<dt><a href="https://pandas.pydata.org/">pandas official project site</a></dt>
+		</dl>
+	</section>
+</section>
+
+
+
+
+<!--
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Task1</h2>
+	<section><h3>The Task</h3>
+
+	</section>
+</section>
+
+<section><h3>Submission</h3>
+	<dl class="fa">
+		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW: dataScienceBasics">progressbg.python.course@gmail.com</a></dt>
+	</dl>
+</section>
+
+ -->
+
+<section class="disclaimer" data-background="/ProgressBG-VC-Python/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-VC-Python/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-VC-Python/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-VC-Python/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1024,
+			height: 850,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-VC-Python/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>
