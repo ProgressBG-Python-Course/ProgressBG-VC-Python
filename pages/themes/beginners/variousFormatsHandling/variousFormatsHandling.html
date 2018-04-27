@@ -904,6 +904,47 @@
         main()
     </code></pre>
   </section>
+  <section><h3 class="advanced">Task2 - A possible, pure Python, Solution</h3>
+    <pre><code rel="Python" class="python">
+      def rearange_books_by_category(books_json):
+        """re-arange books by category.
+          returns:
+          books =
+          {
+            "Beginner":[
+              {
+                "title":
+                "author":
+                "url"
+              }
+            ],
+            "Intermediate":[
+              {
+                "title":
+                "author":
+                "url"
+              }
+            ],
+          }
+        """
+
+        rearanged_books = {}
+        for book in books_json['books']:
+          category = book['level']
+          book_data = {
+            "title": book['title'],
+            "author":book['author'],
+            "url":book['url']
+          }
+
+          if category in rearanged_books.keys():
+            rearanged_books[category].append(book_data)
+          else:
+            rearanged_books[category] = [book_data]
+
+        return rearanged_books
+    </code></pre>
+  </section>
 </section>
 
 <section><h3>Submission</h3>
