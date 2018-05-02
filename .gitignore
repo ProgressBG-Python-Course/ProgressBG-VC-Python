@@ -14,3 +14,4 @@ ENV/
 *.sublime-workspace
 nohup.out
 __*
+*.ipynb_checkpoints
