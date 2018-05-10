@@ -5,7 +5,6 @@ from base import Base
 engine = create_engine('sqlite:///:memory:')
 # engine.execute("select 'Hello, World!'").scalar()
 
-
 class Actor(Base):
     __tablename__ = 'actors'
 
