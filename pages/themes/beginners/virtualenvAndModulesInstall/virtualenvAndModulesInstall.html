@@ -130,6 +130,7 @@
 			<dt>Keep workflows between projects independent.</dt>
 			<dt>Keeps <a href="https://medium.com/knerd/the-nine-circles-of-python-dependency-hell-481d53e3e025" class="advanced">dependency hell</a> away.</dt>
 			<dt>There are many tools for working with virtual environments in Python (virtualenv, pyenv, venv, virtualenvwrapper)</dt>
+			<dt>and <a href="https://docs.pipenv.org/">pipenv</a></dt>
 		</dl>
 	</section>
 	<section><h3>Pipenv - What?</h3>
@@ -138,12 +139,22 @@
 			<dt>Automatically creates and manages a virtualenv for your projects.</dt>
 			<dt><a href="https://pypi.python.org/pypi/pipenv">The officially recommended Python packaging tool</a></dt>
 			<dt>Functionally similar to npm and other modern package managers.</dt>
+			<dt><a href="https://docs.pipenv.org/">docs.pipenv.org</a></dt>
+			<dt><a href="https://media.readthedocs.org/pdf/pipenv/latest/pipenv.pdf">pipenv Documentation</a> - Release 2018.05.18</dt>
 		</dl>
 	</section>
 	<section><h3>Pipenv - Install</h3>
 		<pre><code rel="Terminal" class="bash">
 			$ pip install --user pipenv
 		</code></pre>
+	</section>
+	<section><h3>Pipenv - Instal</h3>
+		<dl class="fa">
+			<dt>If pipenv isn’t available in your shell after installation, you’ll need to add the user base’s binary directory to your PATH.</dt>
+			<dt>On Linux and macOS you can find the user base binary directory by running <code>python -m site --user-base</code> and adding bin to the end</dt>
+			<dt>On Windows you can find the user base binary directory by running <code>py -m site --user-site</code> and replacing <span class="note">site-packages</span> with <span class="note">Scripts</span></dt>
+			<dt>For example, this could return <code>C:\Users\Username\AppData\Roaming\Python36\site-packages</code> so you would need to set your PATH to include <code>C:\Users\Username\AppData\Roaming\Python36\Scripts</code></dt>
+		</dl>
 	</section>
 	<section><h3>Pipenv - manage virtualenv</h3>
 		<pre><code rel="Terminal" class="bash">
