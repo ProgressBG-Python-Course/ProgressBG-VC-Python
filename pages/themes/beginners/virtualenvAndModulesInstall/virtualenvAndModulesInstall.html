@@ -148,12 +148,27 @@
 			$ pip install --user pipenv
 		</code></pre>
 	</section>
-	<section><h3>Pipenv - Instal</h3>
-		<dl class="fa">
-			<dt>If pipenv isn’t available in your shell after installation, you’ll need to add the user base’s binary directory to your PATH.</dt>
-			<dt>On Linux and macOS you can find the user base binary directory by running <code>python -m site --user-base</code> and adding bin to the end</dt>
-			<dt>On Windows you can find the user base binary directory by running <code>py -m site --user-site</code> and replacing <span class="note">site-packages</span> with <span class="note">Scripts</span></dt>
-			<dt>For example, this could return <code>C:\Users\Username\AppData\Roaming\Python36\site-packages</code> so you would need to set your PATH to include <code>C:\Users\Username\AppData\Roaming\Python36\Scripts</code></dt>
+	<section><h3>Pipenv - set up PATH</h3>
+		<dl class="fa" style="font-size: .8em">
+			<dt>If pipenv isn’t available in your shell after installation, you'll need to add the user base's binary directory to your PATH.</dt>
+			<dt>find the user base binary directory, and:</dt>
+			<dd>Linux and macOS:</dd>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+					python -m site --user-base
+					# /home/username/.local
+
+					# add it to your ~/.profile or ~/.bashrc file, or:
+					export PATH=$PATH:/home/username/.local/bin
+			</code></pre>
+			<dd>Windows:</dd>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+				py -m site --user-site
+				#C:\Users\Username\AppData\Roaming\Python36\site-packages
+
+				# add to PATH:
+				C:\Users\Username\AppData\Roaming\Python36\Scripts
+			</code></pre>
+			<dd>You may need to log out for the PATH changes to take effect.</dd>
 		</dl>
 	</section>
 	<section><h3>Pipenv - manage virtualenv</h3>
